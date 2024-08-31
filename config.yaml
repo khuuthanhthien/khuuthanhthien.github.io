@@ -14,10 +14,12 @@ params:
   enableSearch: true
 
   homeInfoParams:
-    Title: '_"How long are you going to wait before you demand the best for yourself?"_'
+    Title: "Hey,"
     Content: >
-      — Epictetus —
+      *This is my firepit, where I occasionally rest my thoughts, and get away from reality.*
 
+
+      *Take a look around and see if you find something interesting.*
 menu:
   main:
     - name: Search
