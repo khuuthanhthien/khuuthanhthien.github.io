@@ -1,0 +1,31 @@
+baseURL: https://tiamatt.dev/
+languageCode: en-us
+title: serenity
+theme: [PaperMod]
+params:
+  author: T
+  ShowBreadCrumbs: true
+  ShowShareButtons: true
+  ShowReadingTime: true
+  ShowPostNavLinks: true
+  ShowCodeCopyButtons: true
+  ShowToc: true
+  env: production
+  enableSearch: true
+
+  homeInfoParams:
+    Title: '_"How long are you going to wait before you demand the best for yourself?"_'
+    Content: >
+      — Epictetus —
+
+menu:
+  main:
+    - name: Search
+      url: /search
+      weight: 10
+    - name: Tags
+      url: /tags
+      weight: 10
+    - name: Archives
+      url: /archives
+      weight: 10
