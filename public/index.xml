@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>serenity</title>
-    <link>http://localhost:1313/</link>
+    <link>https://tiamatt.dev/</link>
     <description>Recent content on serenity</description>
     <generator>Hugo -- 0.133.0</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 08 Jul 2024 10:23:41 +0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://tiamatt.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Arch Install: a comprehensive guide</title>
-      <link>http://localhost:1313/posts/arch-install-a-comprehensive-guide/</link>
+      <link>https://tiamatt.dev/posts/arch-install-a-comprehensive-guide/</link>
       <pubDate>Mon, 08 Jul 2024 10:23:41 +0700</pubDate>
-      <guid>http://localhost:1313/posts/arch-install-a-comprehensive-guide/</guid>
+      <guid>https://tiamatt.dev/posts/arch-install-a-comprehensive-guide/</guid>
       <description>Yet another guide to installing Arch Linux ⚠️ Disclaimer: I am not responsible for the lost of data, faulty BIOS, thermonuclear war, or you only seeing your face in the screen because everything goes blank after installing graphics drivers. This is an installation guide, simplified based on my personal experience, with the only purpose is to be more approachable.
 Please refer to the official installation guide from Arch wiki if you encounter something different that is not mentioned in this post.</description>
     </item>
     <item>
       <title>Conversion to Linux, from Windows</title>
-      <link>http://localhost:1313/posts/windows2linux/</link>
+      <link>https://tiamatt.dev/posts/windows2linux/</link>
       <pubDate>Wed, 03 Jul 2024 15:31:21 +0700</pubDate>
-      <guid>http://localhost:1313/posts/windows2linux/</guid>
+      <guid>https://tiamatt.dev/posts/windows2linux/</guid>
       <description>I used Windows, and was not feeling like on the same boat with Microsoft with how they are directing the development of Windows Operating System, especially after hearing about that incoming Recall feature. If it&amp;rsquo;s being a normal user, I wouldn&amp;rsquo;t care much about the announcement. However, it bothers me as a tech enthusiast that these people spend billions of dollars creating something that is advertised as an &amp;ldquo;improvement to quality of life&amp;rdquo; while fetching all of your personal data in the background, and sending those data to Microsoft.</description>
     </item>
   </channel>
