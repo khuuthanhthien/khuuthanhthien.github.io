@@ -30,3 +30,7 @@ menu:
     - name: Archive
       url: archives/
       weight: 10
+outputs:
+  home:
+    - HTML
+    - JSON
