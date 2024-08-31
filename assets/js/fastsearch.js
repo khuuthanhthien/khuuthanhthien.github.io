@@ -50,8 +50,8 @@ window.onload = function () {
       }
     }
   };
-  // xhr.open("GET", "https://tiamatt.dev/index.json");
-  xhr.open("GET", "../index.json");
+  xhr.open("GET", "https://tiamatt.dev/index.json");
+  // xhr.open("GET", "../index.json");
   xhr.send();
 };
 
