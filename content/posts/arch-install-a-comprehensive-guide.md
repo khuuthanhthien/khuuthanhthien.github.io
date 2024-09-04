@@ -1,5 +1,6 @@
 +++
 title = "Arch Install: a comprehensive guide"
+summary = 'Arch Linux is surprisingly easy.'
 date = 2024-07-08T10:23:41+07:00
 draft = false
 cover = {"image" = "arch_install_guide/arch_wallpaper.jpg"}

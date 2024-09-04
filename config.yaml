@@ -5,20 +5,38 @@ theme: [hugo-PaperMod]
 params:
   author: T
   ShowBreadCrumbs: true
-  ShowShareButtons: true
   ShowReadingTime: true
-  ShowPostNavLinks: true
   ShowCodeCopyButtons: true
   ShowToc: true
+  TocOpen: true
+  hideSummary: false
+  defaultTheme: auto
+  hideFooter: true
+
+  # analytics:
+  #   google:
+  #     SiteVerificationTag: "G-3TRVBMEW7X"
+  googleAnalytics: "G-3TRVBMEW7X"
+
   env: production
 
   homeInfoParams:
     Title: "Hey,"
     Content: >
-      *This is my firepit, where I occasionally rest my thoughts, and get away from reality.*
+      This is my firepit, where I occasionally rest my thoughts, and get away from reality.
 
 
-      *Take a look around and see if you find something interesting.*
+      Take a look around and see if you find something interesting.
+  socialIcons:
+    - name: "spotify"
+      url: "https://open.spotify.com/playlist/0UA9MrH7NQj3fsSrjTMkQm?si=016d92eeb3064bf7"
+    - name: "x"
+      url: "https://x.com/tiam4tt"
+    - name: "github"
+      url: "https://github.com/tiam4tt"
+    - name: "facebook"
+      url: "https://www.facebook.com/thien.khuu.969/"
+
 menu:
   main:
     - name: Search

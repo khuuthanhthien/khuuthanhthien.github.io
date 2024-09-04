@@ -4,7 +4,7 @@
     <title>Linux on serenity</title>
     <link>https://tiamatt.dev/tags/linux/</link>
     <description>Recent content in Linux on serenity</description>
-    <generator>Hugo -- 0.133.0</generator>
+    <generator>Hugo -- 0.134.0</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 08 Jul 2024 10:23:41 +0700</lastBuildDate>
     <atom:link href="https://tiamatt.dev/tags/linux/index.xml" rel="self" type="application/rss+xml" />
@@ -13,15 +13,14 @@
       <link>https://tiamatt.dev/posts/arch-install-a-comprehensive-guide/</link>
       <pubDate>Mon, 08 Jul 2024 10:23:41 +0700</pubDate>
       <guid>https://tiamatt.dev/posts/arch-install-a-comprehensive-guide/</guid>
-      <description>Yet another guide to installing Arch Linux ⚠️ Disclaimer: I am not responsible for the lost of data, faulty BIOS, thermonuclear war, or you only seeing your face in the screen because everything goes blank after installing graphics drivers. This is an installation guide, simplified based on my personal experience, with the only purpose is to be more approachable.
-Please refer to the official installation guide from Arch wiki if you encounter something different that is not mentioned in this post.</description>
+      <description>Arch Linux is surprisingly easy.</description>
     </item>
     <item>
       <title>Conversion to Linux, from Windows</title>
-      <link>https://tiamatt.dev/posts/windows2linux/</link>
+      <link>https://tiamatt.dev/posts/conversion_to_linux_from_windows/</link>
       <pubDate>Wed, 03 Jul 2024 15:31:21 +0700</pubDate>
-      <guid>https://tiamatt.dev/posts/windows2linux/</guid>
-      <description>I used Windows, and was not feeling like on the same boat with Microsoft with how they are directing the development of Windows Operating System, especially after hearing about that incoming Recall feature. If it&amp;rsquo;s being a normal user, I wouldn&amp;rsquo;t care much about the announcement. However, it bothers me as a tech enthusiast that these people spend billions of dollars creating something that is advertised as an &amp;ldquo;improvement to quality of life&amp;rdquo; while fetching all of your personal data in the background, and sending those data to Microsoft.</description>
+      <guid>https://tiamatt.dev/posts/conversion_to_linux_from_windows/</guid>
+      <description>I like Windows, but I love Linux.</description>
     </item>
   </channel>
 </rss>
