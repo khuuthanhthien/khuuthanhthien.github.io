@@ -2,6 +2,10 @@ baseURL: https://tiamatt.dev/
 languageCode: en-us
 title: serenity
 theme: [hugo-PaperMod]
+# services:
+#   googleAnalytics:
+#     ID: "G-3TRVBMEW7X"
+
 params:
   author: T
   ShowBreadCrumbs: true
@@ -12,10 +16,6 @@ params:
   hideSummary: false
   defaultTheme: auto
   hideFooter: true
-
-  services:
-    googleAnalytics:
-      id: "G-3TRVBMEW7X"
 
   homeInfoParams:
     Title: "Hey,"
