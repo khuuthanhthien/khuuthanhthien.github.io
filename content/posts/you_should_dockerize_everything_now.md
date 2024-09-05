@@ -106,7 +106,7 @@ COPY . .
 
 CMD ["python", "source.py"]
 ```
-- **FROM**: specifies the base image to build upon. In this case, we use the *latest* Python image.
+- `FROM`: specifies the base image to build upon. In this case, we use the *latest* Python image.
   - This line will pull the latest Python image from Docker Hub to build everything else.
   - *The base image is the starting point for the Dockerfile. It can be any image available on Docker Hub or a custom image you have created.*
 - `WORKDIR`: sets the working directory inside the container. By default, we use `/app`.
