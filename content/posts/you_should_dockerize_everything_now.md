@@ -11,6 +11,8 @@ tags = ["tech","docker"]
 >
 > This serve as a guide into running simple Docker containers. It's not a comprehensive guide but rather a detailed one.
 
+---
+
 # What is Docker?
 Docker is an open-source platform designed to automate the deployment, scaling and management of applications in lightweight **Containers** - a form of virtualization that allows the packaging of an application along with all of its dependencies into a single package that can run seamlessly across machines with different hardware configurations.
 ### Why Docker?
@@ -22,6 +24,9 @@ I personally find these to be the biggest benefits when using Docker.
 1. **Development environment consistency**: let's say you're working on a group project that requires specific versions of programming languages, databases or other dependencies. Instead of installing everything directly on your system, you can use Docker to create a consistent environment that can be reproduced and shared with others effortlessly. It prevents "works on my machine" issues.
 2. **Playing around with new technologies**: You want to try out a new batabase, web server or a python module. Instead of installing it directly on your system, you can test it out in a Docker container. This avoids cluttering your system with new software that you're not sure if you would ever need again, and allows for easy cleanup after finish experimenting.
 3. **Running multiple projects without conflicting dependencies**: You have two different projects that require different versions of Python. Docker can wrap them up in their own environment and neither will conflict with each other.
+
+---
+
 # The Architecture
 In order to run a basic application inside a Docker container, 3 of these concepts are involved:
 ![docker_whiteboard](/docker101/docker_whiteboard.jpg)
@@ -33,6 +38,9 @@ Additionally:
 - **Docker Registry** is a service that stores Docker Images. [Docker Hub](https://hub.docker.com/) is the default public registry, but you can also set up private registries for internal use.
 
 - **Docker Compose** is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application's services and behaviours. Then, with a single command, you create and start all the services from your configuration.
+
+---
+
 # How it works
 Docker uses a client-server architecture. The Docker client talks to the Docker daemon, which does the heavy lifting of building, running, and distributing your Docker containers.
 
@@ -44,6 +52,9 @@ Docker uses a client-server architecture. The Docker client talks to the Docker 
 ### Server side
 - Commands from Client side will be received and processed by Docker API, which is a RESTful API that provides a way for clients to communicate with the Docker Daemon - a running service of Docker, goes by the name of `dockerd`.
 - Docker Daemon is responsible for creating, running, and managing Docker containers.
+
+
+---
 
 # Start Docking
 We will learn how to dockerize a simple python program and deploy its container.
@@ -160,6 +171,9 @@ Or to see all containers created, including those that have stopped, use:
 ```bash
 docker ps -a
 ```
+
+---
+
 # Docker Container Data
 
 In order to store data, a Docker container has 2 ways to mount its working directory to the host machine's filesystem: **Bind Mount** and **Volume Mount**.
@@ -185,7 +199,9 @@ To remove a volume, use:
 docker volume rm <volume_name>
 ```
 
-# Mode Docker general commands
+---
+
+# More Docker's general commands
 - `docker start <container_id>`: starts a stopped container. You can find the container ID by using `docker ps`.
 
 - `docker stop <container_id>`: stops a running container.
@@ -195,6 +211,9 @@ docker volume rm <volume_name>
 - `docker rm <container_id>`: removes a container from your local machine.
 
 - `docker rmi <image_name>` or `docker rmi <image_id>`: removes an image from your local machine.
+
+
+---
 
 # More `docker run` tags
 - `-d`: enables docker to run in **detach mode**, meaning the container will run in the background. This is useful for running services or applications that you want to keep running in the background while continue to use your terminal.
