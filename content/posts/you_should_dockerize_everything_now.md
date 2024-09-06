@@ -201,7 +201,7 @@ docker volume rm <volume_name>
 
 ---
 
-# More Docker's general commands
+# More Docker commands
 - `docker start <container_id>`: starts a stopped container. You can find the container ID by using `docker ps`.
 
 - `docker stop <container_id>`: stops a running container.
