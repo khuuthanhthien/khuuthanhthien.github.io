@@ -176,15 +176,22 @@ docker ps -a
 
 # Docker Container Data
 
-In order to store data, a Docker container has 2 ways to mount its working directory to the host machine's filesystem: **Bind Mount** and **Volume Mount**.
+> Due to Docker containers being *ephemeral*, which mean they are designed to be disposable, data created withing the process of running will be delete after a container ends its cycle.
+
+There will be situations where you need data persistence. In order to do so, a Docker container has 2 ways to mount its working directory to the host machine's filesystem: **Bind Mount** and **Docker Volume**.
 
 ![container_data](/docker101/container_data.jpg)
 
-**Bind Mount** is the default method of mounting for containers. It links a directory **in the container** to a directory on the **host machine**. This allows the container to read and write data to the host machine's filesystem.
+### The differences
 
-> Due to Docker containers being *ephemeral*, which mean they are designed to be disposable, data stored with **Bind Mount** method will be deleted after a container is stopped.
+It may seems like both methods serve the same purpose, but there are some differences between them:
 
-**Volume Mount** is a better way to persist data. It creates a new directory within Docker's storage directory on the host machine, and mounts it to the container. This way, the data is stored in the host machine's filesystem, but is managed by Docker and will not be deleted when the container ends its cycle.
+| Feature | Bind Mount | Docker Volume |
+|:--------|:-----------|:--------------|
+| **Binding method**| Links a directory **in the container** to specified directory on the **host machine** | Links a directory **in the container** to a **Docker Volume** (in Linux, they are usually located at `/var/lib/docker/volumes/`) |
+| **Data Persistence** | Data is stored in the **host machine**'s filesystem | Data is stored in the **Docker Volume** |
+| **Security** | Less secure as it can access the host machine's filesystem, any changes made to the container directory will be seen directly on the filesystem | More secure as it is abstracted away from the host machine's filesystem |
+| **Use case** | Useful for development purpose as binded data can be modified outside of the container | Useful for production purpose as it is more secure and isolated |
 
 To create a **Docker Volume**, you can use the command:
 ```bash
@@ -193,6 +200,10 @@ docker volume create <volume_name>
 To see created Volumes, use:
 ```bash
 docker volume ls
+```
+To see info about a Volume, use:
+```bash
+docker volume inspect <volume_name>
 ```
 To remove a volume, use:
 ```bash
