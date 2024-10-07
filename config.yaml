@@ -2,9 +2,6 @@ baseURL: https://tiamatt.dev/
 languageCode: en-us
 title: serenity
 theme: [hugo-PaperMod]
-# services:
-#   googleAnalytics:
-#     ID: "G-3TRVBMEW7X"
 
 params:
   author: T
@@ -18,10 +15,9 @@ params:
   hideFooter: true
 
   homeInfoParams:
-    Title: "Hey,"
-    Content: "I write about things that cannot be spoken and share thoughts that want to be heard."
-
-
+    Title: "[~]$ whoami"
+    Content: >
+      Data Science student having interests in high fidelity audio, Arch Linux and everything open source.
   socialIcons:
     - name: "spotify"
       url: "https://open.spotify.com/playlist/0UA9MrH7NQj3fsSrjTMkQm?si=016d92eeb3064bf7"
