@@ -2,19 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://tiamatt.dev/tags/docker/</loc>
-    <lastmod>2024-09-04T08:02:50+07:00</lastmod>
+    <loc>https://tiamatt.dev/posts/kz-edc-pro-they-forgot-a-zero-in-the-price/</loc>
+    <lastmod>2024-10-07T10:46:44+07:00</lastmod>
   </url><url>
     <loc>https://tiamatt.dev/posts/</loc>
-    <lastmod>2024-09-04T08:02:50+07:00</lastmod>
+    <lastmod>2024-10-07T10:46:44+07:00</lastmod>
   </url><url>
     <loc>https://tiamatt.dev/</loc>
-    <lastmod>2024-09-04T08:02:50+07:00</lastmod>
+    <lastmod>2024-10-07T10:46:44+07:00</lastmod>
   </url><url>
     <loc>https://tiamatt.dev/tags/</loc>
-    <lastmod>2024-09-04T08:02:50+07:00</lastmod>
+    <lastmod>2024-10-07T10:46:44+07:00</lastmod>
   </url><url>
     <loc>https://tiamatt.dev/tags/tech/</loc>
+    <lastmod>2024-10-07T10:46:44+07:00</lastmod>
+  </url><url>
+    <loc>https://tiamatt.dev/tags/docker/</loc>
     <lastmod>2024-09-04T08:02:50+07:00</lastmod>
   </url><url>
     <loc>https://tiamatt.dev/posts/you_should_dockerize_everything_now/</loc>
