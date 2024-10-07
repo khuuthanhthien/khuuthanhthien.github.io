@@ -19,8 +19,9 @@ params:
 
   homeInfoParams:
     Title: "Hey,"
-    Content: >
-      This is my firepit, where I occasionally rest my thoughts, and get away from reality.
+    Content: "I write about things that cannot be spoken and share thoughts that want to be heard."
+
+
   socialIcons:
     - name: "spotify"
       url: "https://open.spotify.com/playlist/0UA9MrH7NQj3fsSrjTMkQm?si=016d92eeb3064bf7"
@@ -28,9 +29,6 @@ params:
       url: "https://x.com/tiam4tt"
     - name: "github"
       url: "https://github.com/tiam4tt"
-    - name: "facebook"
-      url: "https://www.facebook.com/thien.khuu.969/"
-
 menu:
   main:
     - name: Search
