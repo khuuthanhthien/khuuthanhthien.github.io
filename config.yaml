@@ -33,7 +33,7 @@ menu:
     - name: Tags
       url: tags/
       weight: 10
-    - name: Archive
+    - name: Archives
       url: archives/
       weight: 10
 outputs:
