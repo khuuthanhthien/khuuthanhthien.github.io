@@ -16,8 +16,8 @@ params:
 
   homeInfoParams:
     Title: "[~]$ whoami"
-    Content: >
-      Data Science student having interests in high fidelity audio, Arch Linux and everything open source.
+    Content: A tech enthusiast having interests in high fidelity audio, Linux and everything open source.
+
   socialIcons:
     - name: "spotify"
       url: "https://open.spotify.com/playlist/0UA9MrH7NQj3fsSrjTMkQm?si=016d92eeb3064bf7"
