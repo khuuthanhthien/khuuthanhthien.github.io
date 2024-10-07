@@ -74,3 +74,25 @@
 .toc li a:hover {
     color: var(--secondary);
 }
+
+.title {
+    font-family: "Fira Mono", monospace;
+    font-weight: bold;
+}
+
+.custom-title-content {
+    font-family: "Fira Mono", monospace;
+    font-size: 110%;
+}
+
+.blinking-cursor {
+    font-family: "Fira Mono", monospace;
+    font-weight: bold;
+    animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
