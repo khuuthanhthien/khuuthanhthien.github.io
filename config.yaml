@@ -4,7 +4,6 @@ title: serenity
 theme: [hugo-PaperMod]
 
 params:
-  author: T
   ShowBreadCrumbs: true
   ShowReadingTime: true
   ShowCodeCopyButtons: true
