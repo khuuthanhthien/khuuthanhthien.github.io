@@ -41,7 +41,7 @@ For those who like their music to be "fun", this EDC Pro kicks hard in the bass 
 
 Now I'm more on the neutral side so this style of tuning is not my favourite in the world. But still, hats off to the guys who worked on this piece of marvel, they did a really good job focusing on the quality of sound and potentially ignoring all the durability concerns.
 
-But hey, a few months of abusing have passed and it's still functionall, good enough for me.
+A few months of abusing have passed and it's still functional, good enough for me.
 
 ---
 
