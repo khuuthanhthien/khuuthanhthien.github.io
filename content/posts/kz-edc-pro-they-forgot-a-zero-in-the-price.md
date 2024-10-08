@@ -49,7 +49,7 @@ A few months of abusing have passed and it's still functional, good enough for m
 
 Having listened to many IEMs with better sounds, I am amazed by the performance so close to those more expensive ones at such price range. It feels like there was some low-wage labor going on at KZ's factory, or else they couldn't possibly release this product to the market and expect any profits at all, either that or they might just be selling this product as a marketing campaign.
 
-I have no affiliation with any association, but I think they should have put more metal to the build and add another 0 to it's price.
+I have no affiliation with KZ, but I think they should have put more metal to the build and add another 0 to it's price.
 
 **Should you buy it?**
 
