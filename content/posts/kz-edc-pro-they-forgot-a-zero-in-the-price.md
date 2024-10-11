@@ -11,7 +11,7 @@ I like listening to music, especially those tracks from the 90s and early 2000s 
 
 This cheap looking piece of plastic made me think many. It has a basic dynamic driver (DD) on each side but the tuning is really good, so good that it deceives me with its price.
 
-For only about 120.000 VND (~$5), the sound is so close to that of a higher-end one at 10 times the cost.
+For only about 120.000 VND (~$5), the sound is so close to that of a higher-end one that is 10 times the cost.
 
 ---
 
