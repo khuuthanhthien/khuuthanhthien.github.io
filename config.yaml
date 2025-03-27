@@ -16,19 +16,14 @@ params:
   homeInfoParams:
     Title: "[~]$ whoami"
     Content: A tech enthusiast having interests in high fidelity audio, Linux and everything open source.
-
-  socialIcons:
-    - name: "spotify"
-      url: "https://open.spotify.com/playlist/0UA9MrH7NQj3fsSrjTMkQm?si=016d92eeb3064bf7"
-    - name: "x"
-      url: "https://x.com/tiam4tt"
-    - name: "github"
-      url: "https://github.com/tiam4tt"
+  social:
+    socialIcons:
+      - name: "spotify"
+        url: "https://open.spotify.com/playlist/0UA9MrH7NQj3fsSrjTMkQm?si=016d92eeb3064bf7"
+      - name: "github"
+        url: "https://github.com/tiam4tt"
 menu:
   main:
-    - name: About
-      url: about/
-      weight: 10
     - name: Search
       url: search/
       weight: 10

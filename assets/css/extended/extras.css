@@ -1,6 +1,7 @@
 .title {
     font-family: "Fira Mono", monospace;
     font-weight: bold;
+    
 }
 
 .site-logo {
@@ -21,7 +22,7 @@
 .blinking-cursor {
     font-family: "Fira Mono", monospace;
     font-weight: bold;
-    animation: blink 1s step-start infinite;
+    animation: blink 1s step-end infinite;
 }
 
 @keyframes blink {
