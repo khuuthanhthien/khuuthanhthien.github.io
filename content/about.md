@@ -8,23 +8,23 @@ draft = false
 author = [""]
 cover = {"image" = "about_cover.jpg"}
 +++
-### I am
-Currently a student at VNUHCM - University of Science pursuing my Bachelor of Science focused on Data Science.
 
-- A fan of mechanical keyboards and IEMs. Believer of high fidelity audio.
-- I like everything open-source. They're free and awesome.
-- Arch user (btw).
+### About me
+I'm a student at University of Science - VNUHCM, currently pursuing a B.Sc. in Information Technology with a focus on ML/AI.
 
-### Hobbies
-- **Calisthenics and weight training**: Compared to pure weight training, mixing calisthenics into workout routine helps me improve flexibility in addition to building strength.
+### Occupation
+- **Mechanical Keyboards and IEMs**: My niche hobbies. I love the endless posisbilities of customizing mechanical keyboards and the immersive experience of high-quality in-ear monitors.
+- **Open Source**: I enjoy using and supporting open-source software for its flexibility, transparency.
+- **Linux**: My go-to operating system. I love the control, customization, and the philosophy behind it—plus, it just works the way I want it to.
+- **Programming Languages**: Mainly Python and C/C++, with a light knowledge of HTML/CSS.
 
-- **Music**: I listen to anything that sounds good to me, regardless of genre. Although I do have a soft spot for 90s and early 2000s music.
-
-- **IEMs**: I don't have hate against wireless audio devices, it's just I prefer the refined design of wired IEMs and their superior sound quality.
-
-- **Reading**: I don't read enough to call myself a bookworm but I occasionally read a book or two, mostly about philosophy, novels, and self-improvement.
-
-### About this blog
+### How I got this blog running
 I created this blog because the idea of learning web development fascinates me. And building myself a personal website is my way of learning as I go.
 
 This place is where I write about my thoughts, experiences, and things I find interesting. It came to life as a way for me to document my journey in learning and growing as a person.
+
+I don't have a deep knowledge of web development, still I made this work using:
+
+- **Hugo** - A static site generator written in GO, introduced to me by a friend. Easy to configure and use, with posts written in markdown.
+- **PaperMod theme** - A fast, clean, responsive Hugo theme.
+- **Vercel** - A cloud platform for hosting static sites. Easy to deploy and manage, it’s connected to my GitHub repository and automatically deploys my site whenever I push new changes.

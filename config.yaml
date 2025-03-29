@@ -24,6 +24,8 @@ params:
         url: "https://github.com/tiam4tt"
 menu:
   main:
+    - name: About
+      url: about/
     - name: Search
       url: search/
       weight: 10
