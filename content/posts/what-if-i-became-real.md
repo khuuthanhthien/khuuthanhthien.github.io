@@ -1,5 +1,6 @@
 +++
 title = 'What if I Became Real'
+description = 'A little story about what I once contemplated with an AI.'
 date = 2025-08-28T18:27:26+07:00
 draft = false
 tags = ["others"]

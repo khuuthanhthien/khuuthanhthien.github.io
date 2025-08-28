@@ -30,7 +30,7 @@ params:
             url: "https://github.com/tiam4tt"
         -   name: "linkedin"
             icon: "simple:linkedin"
-            url: "www.linkedin.com/in/khuuthanhthien"
+            url: "https://www.linkedin.com/in/khuuthanhthien"
 menu:
     main:
         -   name: Home

@@ -1,6 +1,6 @@
 +++
 title = 'My experience with the KZ EDC Pro'
-description = 'Bought'
+description = 'I bought the earphones out of curiosity and was pleasantly surprised.'
 date = 2024-10-07T10:46:44+07:00
 
 draft = false
