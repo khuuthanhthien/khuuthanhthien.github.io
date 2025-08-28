@@ -20,7 +20,7 @@ params:
     subtitle: "A tech enthusiast having interests in high fidelity audio, Linux and everything open source."
     mode: "dark"
     useCDN: true
-    favicon: "favicon.ico"
+    favicon: "/favicon.ico"
     featherIconsCDN: true
     mathjac: true
     katex: true
