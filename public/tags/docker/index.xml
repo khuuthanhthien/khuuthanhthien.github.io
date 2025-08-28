@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docker on serenity</title>
-    <link>https://tiamatt.dev/tags/docker/</link>
+    <link>//localhost:1313/tags/docker/</link>
     <description>Recent content in Docker on serenity</description>
-    <generator>Hugo -- 0.145.0</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
+    <copyright>Khuu Thanh Thien</copyright>
     <lastBuildDate>Wed, 04 Sep 2024 08:02:50 +0700</lastBuildDate>
-    <atom:link href="https://tiamatt.dev/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>You should Dockerize everything, NOW!</title>
-      <link>https://tiamatt.dev/posts/you_should_dockerize_everything_now/</link>
+      <title>You should Dockerize everything!</title>
+      <link>//localhost:1313/posts/you_should_dockerize_everything/</link>
       <pubDate>Wed, 04 Sep 2024 08:02:50 +0700</pubDate>
-      <guid>https://tiamatt.dev/posts/you_should_dockerize_everything_now/</guid>
-      <description>Not at all a sophisticated guide on using Docker.</description>
+      <guid>//localhost:1313/posts/you_should_dockerize_everything/</guid>
+      <description>Just a write-up of my experience learning and experimenting with Docker.</description>
     </item>
   </channel>
 </rss>

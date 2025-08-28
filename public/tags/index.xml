@@ -1,32 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on serenity</title>
-    <link>https://tiamatt.dev/tags/</link>
+    <link>//localhost:1313/tags/</link>
     <description>Recent content in Tags on serenity</description>
-    <generator>Hugo -- 0.145.0</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 Oct 2024 10:46:44 +0700</lastBuildDate>
-    <atom:link href="https://tiamatt.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Khuu Thanh Thien</copyright>
+    <lastBuildDate>Thu, 28 Aug 2025 18:27:26 +0700</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Others</title>
+      <link>//localhost:1313/tags/others/</link>
+      <pubDate>Thu, 28 Aug 2025 18:27:26 +0700</pubDate>
+      <guid>//localhost:1313/tags/others/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Tech</title>
-      <link>https://tiamatt.dev/tags/tech/</link>
+      <link>//localhost:1313/tags/tech/</link>
       <pubDate>Mon, 07 Oct 2024 10:46:44 +0700</pubDate>
-      <guid>https://tiamatt.dev/tags/tech/</guid>
+      <guid>//localhost:1313/tags/tech/</guid>
       <description></description>
     </item>
     <item>
       <title>Docker</title>
-      <link>https://tiamatt.dev/tags/docker/</link>
+      <link>//localhost:1313/tags/docker/</link>
       <pubDate>Wed, 04 Sep 2024 08:02:50 +0700</pubDate>
-      <guid>https://tiamatt.dev/tags/docker/</guid>
+      <guid>//localhost:1313/tags/docker/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux</title>
-      <link>https://tiamatt.dev/tags/linux/</link>
+      <link>//localhost:1313/tags/linux/</link>
       <pubDate>Mon, 08 Jul 2024 10:23:41 +0700</pubDate>
-      <guid>https://tiamatt.dev/tags/linux/</guid>
+      <guid>//localhost:1313/tags/linux/</guid>
       <description></description>
     </item>
   </channel>

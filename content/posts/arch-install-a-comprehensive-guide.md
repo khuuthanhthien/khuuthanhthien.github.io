@@ -1,16 +1,19 @@
 +++
 title = "Arch Install: a comprehensive guide"
-summary = 'Arch Linux is surprisingly easy.'
+summary = "It's not that hard tbh."
 date = 2024-07-08T10:23:41+07:00
 draft = false
-cover = {"image" = "arch_install_guide/arch_wallpaper.jpg"}
 tags = ["tech","linux"]
 +++
+
+![cover](/arch_install_guide/arch_wallpaper.jpg)
+
 ## Yet another guide to installing Arch Linux
 
-> ⚠️ **Disclaimer:** I am not responsible for the lost of data, faulty BIOS, thermonuclear war, or you only seeing your face in the screen because everything goes blank after installing graphics drivers. This is an installation guide, simplified based on my personal experience, with the only purpose is to be more approachable.
-
+> **Disclaimer:** I am not responsible for the lost of data, faulty BIOS, thermonuclear war, or you only seeing your face in the screen because everything goes blank after installing graphics drivers. This is an installation guide, simplified based on my personal experience, with the only purpose is to be more approachable.
+>
 > Please refer to the official [installation guide](https://wiki.archlinux.org/title/installation_guide) from Arch wiki if you encounter something different that is not mentioned in this post.
+
 ---
 ## Prerequisites
 - **BACKUP ALL OF YOUR DATA**
@@ -20,12 +23,11 @@ tags = ["tech","linux"]
 ## Preparation
 ### Disable secure boot
 
-Secure Boot is a security feature that restricts your system to booting with software signed by your device's manufacturer. This helps prevent malicious software from loading during startup. However, it can potentially prevents unsigned operating systems, like some Linux distros, from booting up.
+Secure Boot is a BIOS or UEFI feature that only allows your computer to boot software signed by the manufacturer. It is meant to stop malware from loading before the operating system starts. This sounds useful but it can also block some Linux distributions that do not include the right signatures.
 
-By disabling Secure Boot, we enable a wider range of compatibility. Although Arch Linux is a signed distro, meaning we can potentially keep Secure Boot enabled, some of its kernel variants and other necessary packages (even proprietary ones) might not guarantee such security.
+Arch Linux does not come signed by default. You can make it work with extra setup, but custom kernels or proprietary drivers like NVIDIA often cause problems. For that reason most people simply turn Secure Boot off because it makes installing and running Arch much easier.
 
-1. Enter BIOS menu:
-- You can access this menu by pressing a key while your system is booting, such as F1, F2, F12 or Esc depending on your motherboard's manufacturer.
+1. Enter BIOS menu: You can access this menu by pressing a key while your system is booting, such as F1, F2, F12 or Esc depending on your motherboard's manufacturer.
 2. Find the **Secure boot** option in your BIOS setting menu and set it to **disabled**. You can find this option in either the **Security** tab or the **Boot** tab.
 3. Save changes and exit.
 
@@ -43,13 +45,13 @@ By disabling Secure Boot, we enable a wider range of compatibility. Although Arc
 ### Partition the disks
 When recognized by the live sytem, disks are assigned to a *block device* such as `/dev/sda` or `/dev/nvme0n1/`.
 To identify your disks, use **lsblk**
-```
+```bash
 lsblk
 ```
 Results ending in **rom**, **loop** or **airootfs** can be ignored.
 
 To partition your selected disk, it is recommended to use **cfdisk**, which is similar to **fdisk** but with a less complicated interface.
-```
+```bash
 cfdisk /dev/your_disk_name
 ```
 You should see a similar screen as follow, with `sda` being your disk name (e.g.`nvme0n1`):
@@ -58,7 +60,8 @@ You should see a similar screen as follow, with `sda` being your disk name (e.g.
 
 From here, take your time planning a proper long-term partitioning layout to avoid complicated resizing procedures in the future.
 
-#### Recommended layout:
+**Recommended layout**
+
 | **Mount point**   | **Partition type**     | **Suggested size**                       |
 | :---------------- | :--------------------- | :--------------------------------------- |
 | `/boot`           | EFI partition          | 1GB                                      |
@@ -66,7 +69,7 @@ From here, take your time planning a proper long-term partitioning layout to avo
 | `/`               | Root partition         | Remainder of storage (at least 23-32GB)  |
 
 > If the disk from which you want to partition already has an **EFI system partition**, do not create another and use the existing one instead. If you're dual booting and your Windows system is present in the disk, there should be an EFI partion which can be shared with Arch.
-
+>
 > **Swap** virtual memory partition is optional.
 
 After creating new partitions, save the changes by choosing **[write]**.
@@ -76,70 +79,71 @@ After creating new partitions, save the changes by choosing **[write]**.
 ### Format the partitions
 
 **Root partition (ext4)**
-```
+```bash
 mkfs.ext4 /dev/your_root_partition
 ```
 **Swap partition (swap)**
 
 No need to perform this if you didn't create a **[SWAP]** partition in the previous step.
-```
+```bash
 mkswap /dev/your_swap_partition
 ```
+
 **EFI partition (fat32)**
 > ⚠️ If you did not create the EFI system partition during the partitioning step. **DO NOT** reformat the previously existing EFI partition, it can destroy the bootloader of other installed operating systems.
-```
+```bash
 mkfs.fat -F 32 /dev/your_efi_partition
 ```
 ### Mount the partitions
 **Mount the root volume**
-```
+```bash
 mount /dev/your_root_partition /mnt
 ```
 
 **Mount the EFI system partition**
 Create a mounting point under `/mnt` for EFI beforehand with `mkdir`:
-```
+```bash
 mkdir -p /mnt/boot/efi
 ```
 Then mount the efi partition:
-```
+```bash
 mount /dev/your_efi_partition /mnt/boot/efi
-```
+```bash
 Afternatively, you can run `mount` with `--mkdir` option:
-```
+```bash
 mount --mkdir /dev/your_efi_partition /mnt/boot/efi
 ```
 **Enable swap partition**
 
 If you had [SWAP] created, simply enable it:
-```
+```bash
 swapon /dev/your_swap_partition
 ```
 ---
 ## Installation
 ### Connect to the internet
 This step requires internet connection. To connect to a wireless network, we will use the pre-installed `iwd` ultility:
-```
+```bash
 iwctl
 ```
 Next, list all your wireless interfaces/devices using this command:
-```
+```bash
 device list
-```
+```bash
 Select the preferred one, normally `wlan0`.
 
 Now scan for available networks:
-```
+```bash
 station wlan0 scan
 ```
 (replace `wlan0` with your preferred one)
 
 While it's scanning, see available connections with this command:
-```
+```bash
 station wlan0 get-networks
 ```
 Connect to your target Wi-Fi:
-```
+```bash
 station wlan0 connect "name of network/wifi"
 ```
 *If it's password-protected, you will be asked for a password, enter its credentials and you should be good to go.*
@@ -147,7 +151,7 @@ station wlan0 connect "name of network/wifi"
 Exit the tool by pressing **Ctrl + D**. Or type `exit` in the console.
 
 We can check the connection with `ping`:
-```
+```bash
 ping google.com
 ```
 If you get bytes in reply, the you are connected. Press **Ctrl + C** to cancel the ping process.
@@ -156,27 +160,27 @@ If you get bytes in reply, the you are connected. Press **Ctrl + C** to cancel t
 It is recommended to select the optimal mirror list for your Arch Linux to ensure the fastest server response when installing or upgrading packages.
 The top mirror located in `/etc/pacman.d/mirrorlist` is chosen automatically and might not actually be the best one.
 To prevent this problem. First we need to sync the pacman repository:
-```
+```bash
 pacman -Syy
 ```
 Now install `reflector`, a Python script that retrieves the latest mirror from [Arch mirror status](https://archlinux.org/mirrors/status/), filter the most up-to-date mirrors and sort them by speed.
 
-```
+```bash
 pacman -S reflector
 ```
 Make a backup of mirror list:
-```
+```bash
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 ```
 Find your country's in the mirror list with reflector:
-```
+```bash
 reflector --list-countries
 ```
 Remember your country code in `Code` column.
 
 Now, get the good mirror list with reflector and save it to `/etc/pacman.d/mirrorlist`:
 
-```
+```bash
 reflector --sort rate -c "country_code" -f 10 -l 10 -n 10 --save /etc/pacman.d/mirrorlist
 ```
 - `--sort rate`: sorts the mirror list by download rate, descending.
@@ -193,7 +197,8 @@ You can customize the number after each filter options to your liking. Type `ref
 
 ### Install fundamental packages
 Now that we have obtained a good mirror list, we can proceed to install the most basic packages for Arch Linux:
-```
+
+```bash
 pacstrap /mnt base linux linux-firmware grub efibootmgr neovim
 ```
 
@@ -215,30 +220,30 @@ The installation process should take 10-15 minutes. If it fails during the time,
 Now that we have basically finished installing Arch Linux. These are the few steps left that prevent us from being an Arch user.
 ### Fstab
 Generate file system table with this command:
-```
+```bash
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
 The content in `/mnt/etc/fstab` should be identical to the output when we run this command in console:
-```
+```bash
 genfstab -U /mnt
 ```
 Check `/mnt/etc/fstab` and edit/regenerate in case of errors by using `cat` to print the file's content into console:
-```
-cat /mtn/etc/fstab
+```bash
+cat /mnt/etc/fstab
 ```
 
 ### Change root directory into the new system
-```
+```bash
 arch-chroot /mnt
 ```
 This command let us enter the mounted disk as *root*. Now you are using the newly installed Arch Linux system. Further configurations is needed so you could run it properly when reboot.
 ### Timezone
 By default Arch's timezone if set to UTC. We can use **timedatectl** to change the correct timezone.
-```
+```bash
 timedatectl list-timezones
 ```
 The above command lists all of the available timezones. Choose your timezone and apply it with this command:
-```
+```bash
 timedatectl set-timezone Vietnam/Ho_Chi_Minh
 ```
 Replace `Vietnam/Ho_Chi_Minh` with the timezone that you prefer.
@@ -248,64 +253,63 @@ This is what determine the language, numbering, date, and currency formats of ou
 
 `/etc/locale.gen` contains all the available locales that we can choose by uncomment the lines.
 
-```
+```bash
 nvim /etc/locale.gen
 ```
-- Enter **edit mode** by pressing *i* then navigate to the desired line of your locale and remove `#` at the beginning.
-- Press **Esc** to enter **normal mode** and type `:wq` to save the changes and quit to console.
+1. Enter **edit mode** by pressing *i* then navigate to the desired line of your locale and remove `#` at the beginning.
+2. Press **Esc** to enter **normal mode** and type `:wq` to save the changes and quit to console.
 *I would recommend having en_US.UTF-8 as system language to make it easier diagnosing problems and finding solutions, you can choose an addition of your native language for other format like date, time and currency.*
-
-- Create **locale.conf** and set the language accordingly:
-```
+3. Create **locale.conf** and set the language accordingly:
+```bash
 nvim /etc/locale.conf
 ```
-Add this line to the file and save it (you can replace *en_US.UTF-8* with your preferred system language):
-```
+Add this line to the file and save it (you can replace `en_US.UTF-8` with your preferred system language):
+```bash
 LANG=en_US.UTF-8
 ```
 Finally generate the locale configurations:
-```
+```bash
 locale-gen
 ```
 You should see the chosen locales being generated.
 
 ### Network configuration
 Create a `/etc/hostname` file to add your computer's hostname to the network
-```
+```bash
 echo archuser > /etc/hostname
 ```
 Replace **archuser** with your preferred hostname.
 
 Next is to create the hosts file:
-```
+```bash
 nvim /etc/hosts
 ```
 Add this configuration to your **hosts** file (replace **archuser** with your hostname as well):
-```
+```bash
 127.0.0.1	localhost
 ::1		localhost
 127.0.1.1	archuser
 ```
 ### Setup root password
 Run the following command and set the password for your *root* account:
-```
+```bash
 passwd
 ```
 Additionally, it is strongly recommended avoid using the system as root. Best practice is to add another user and grant root access.
-```
+```bash
 useradd -m newuser
 passwd newuser
 ```
 Replace `newuser` with your preferred name and choose a password.
 
 Now grant our new user root access and other privileges:
-```
+```bash
 usermod -aG wheel,audio,video,storage newuser
 ```
 The above command adds **newuser** to 4 groups: *wheel*, *audio*, *video* and *storage* which accordingly allowing access to super user, audio devices, video devices and storage devices control.
 
 Finally, we need to edit the visudo file so that root access can be granted to **wheel** user group:
-```
+```bash
 EDITOR=nvim visudo
 ```
 ![visudo](/arch_install_guide/visudo.png)
@@ -313,7 +317,7 @@ EDITOR=nvim visudo
 Uncomment `%wheel ALL=(ALL:ALL) ALL` to grant root access to your newly created user.
 
 **Unmount all partitions and reboot the system:**
-```
+```bash
 umount -a && reboot
 ```
 Login with your created username and password.
@@ -350,23 +354,24 @@ In **X11**, compositor can be a separate program from the **window manager**, bu
 In **Wayland**, the compositor takes on both window management and compositing tasks, acting as a single program.
 
 6. **Desktop environment (DE)** is essentially the graphical interface that you interact with on top of the core Linux system. It can ultilize the use of both Wayland and X11 display protocol for display and comes packed with more features for controlling your system overall.
-- There are many DEs to choose, each with their own set of core applications and features. Normally people will choose one of the followings:
+There are many DEs to choose, each with their own set of core applications and features. Normally people will choose one of the followings:
     - **xfce:** a minimal, light-weight DE with efficient resource consumption, suitable for old hardwares.
     - **GNOME:** modern and user-friendly DE, has sleek interface and supports many extensions for customization.
     - **KDE Plasma:** Feature-rich and highly customizable, the design language is generally not as catchy as **GNOME** but its collection of features and proprietary applications definitely balances the scale.
     - **Cinnamon:** Has a familiar layout to that of Windows, holds a good balance of features and performance.
 
-- In this guide, we will install **KDE Plasma** for graphical interface.
+There are also many other methods of displaying things in your screen to choose such as [i3 - tiling window manager](https://i3wm.org/), [hyprland - tiling wayland compositor](https://hyprland.org/), etc.
 
-Of course there are many other methods of displaying things in your screen to choose as wished such as [i3 - tiling window manager](https://i3wm.org/), [hyprland - tiling wayland compositor](https://hyprland.org/) and many more.
+- For the sake of your sanity, install **KDE Plasma**.
 
-### Install KDE Plasme Desktop Environment
-- Start by performing a full system update so that all package informations are up-to-date:
-```
+### Install KDE Plasma Desktop Environment
+
+Start by performing a full system update so that all package informations are up-to-date:
+```bash
 sudo pacman -Syu
 ```
-- Now install KDE Plasma
-```
+Install KDE Plasma
+```bash
 sudo pacman -S plasma
 ```
 It will prompt you to choose which applications to install, don't choose anything and press **Enter** to install all.
@@ -374,16 +379,16 @@ It will prompt you to choose which applications to install, don't choose anythin
 `plasma` is a group of KDE's core applications neccessary for a functional Desktop Environment, shipped with bluetooth and network control utilities, file manager, system settings, etc.
 
 Additionally, you can install the full collection of KDE's applications with `kde-applications` (please note that this package will contain many applications that you don't need, or might need, including games and potentially bloatwares):
-```
+```bash
 sudo pacman -S kde-applications
 ```
 
 ## AUR Helper
 You're missing out on a lot things if your Arch Linux doesn't have an [AUR Helper](https://wiki.archlinux.org/title/AUR_helpers) - a tool that simplifies interacting with the AUR. Manually downloading, building, and installing AUR packages can be cumbersome. AUR Helpers automate these tasks, making it easier and faster to install software from the AUR.
 
-**yay** will be the chosen one for this guide.
+**yay**(Yet Another Yogurt) is my go-to.
 
-```
+```bash
 pacman -S --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
@@ -394,19 +399,28 @@ The user guide for **yay** can be found in [this repository](https://github.com/
 
 ## Enable core sevices
 Before you reboot into the new system. Enable `sddm` that `KDE plasma` uses as the default display manager (login screen).
-```
+```bash
 sudo systemctl enable sddm.service
 ```
 Also enable `NetworkManager.service` to be able to configure network connections on next reboot:
-```
+```bash
 sudo systemctl enable NetworkManager.service
 ```
 Reboot and enjoy your new Linux system:
-```
+```bash
 reboot
 ```
 ## Install additional packages
 If your computer has a dedicated graphics card (NVIDIA/AMD) then you should consider installing the respective drivers to make use of everything from your computer. Refer to the Arch Wiki for installation guide with [AMD gpu](https://wiki.archlinux.org/title/AMDGPU) or [NVIDIA gpu](https://wiki.archlinux.org/title/NVIDIA).
 
 ## Welcome to the dark side, or the bright side, depends on how you put it.
-You did it! Welcome to the Arch realm! Taming the Arch installation process is no small feat, and you should be proud of conquering the command line and configuring your system. Now you have a powerful, customizable Arch Linux installation ready to be molded into your perfect desktop. The journey of exploration with Arch begins now!
+
+**Changelog**
+
+- Installed Arch Linux successfully.
+
+- Gained +10 patience and +5 troubleshooting skills.
+
+- Known issues: system may break randomly, user expected to fix it.
+
+- Future work: revisit this guide multiple times.

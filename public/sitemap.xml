@@ -2,42 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://tiamatt.dev/posts/kz-edc-pro-they-forgot-a-zero-in-the-price/</loc>
+    <loc>//localhost:1313/tags/others/</loc>
+    <lastmod>2025-08-28T18:27:26+07:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/posts/</loc>
+    <lastmod>2025-08-28T18:27:26+07:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/</loc>
+    <lastmod>2025-08-28T18:27:26+07:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/</loc>
+    <lastmod>2025-08-28T18:27:26+07:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/posts/what-if-i-became-real/</loc>
+    <lastmod>2025-08-28T18:27:26+07:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/posts/my_experience_with_the_kz_edc_pro/</loc>
     <lastmod>2024-10-07T10:46:44+07:00</lastmod>
   </url><url>
-    <loc>https://tiamatt.dev/posts/</loc>
+    <loc>//localhost:1313/tags/tech/</loc>
     <lastmod>2024-10-07T10:46:44+07:00</lastmod>
   </url><url>
-    <loc>https://tiamatt.dev/</loc>
-    <lastmod>2024-10-07T10:46:44+07:00</lastmod>
-  </url><url>
-    <loc>https://tiamatt.dev/tags/</loc>
-    <lastmod>2024-10-07T10:46:44+07:00</lastmod>
-  </url><url>
-    <loc>https://tiamatt.dev/tags/tech/</loc>
-    <lastmod>2024-10-07T10:46:44+07:00</lastmod>
-  </url><url>
-    <loc>https://tiamatt.dev/tags/docker/</loc>
+    <loc>//localhost:1313/tags/docker/</loc>
     <lastmod>2024-09-04T08:02:50+07:00</lastmod>
   </url><url>
-    <loc>https://tiamatt.dev/posts/you_should_dockerize_everything_now/</loc>
+    <loc>//localhost:1313/posts/you_should_dockerize_everything/</loc>
     <lastmod>2024-09-04T08:02:50+07:00</lastmod>
   </url><url>
-    <loc>https://tiamatt.dev/posts/arch-install-a-comprehensive-guide/</loc>
+    <loc>//localhost:1313/posts/arch-install-a-comprehensive-guide/</loc>
     <lastmod>2024-07-08T10:23:41+07:00</lastmod>
   </url><url>
-    <loc>https://tiamatt.dev/tags/linux/</loc>
+    <loc>//localhost:1313/tags/linux/</loc>
     <lastmod>2024-07-08T10:23:41+07:00</lastmod>
   </url><url>
-    <loc>https://tiamatt.dev/posts/conversion_to_linux_from_windows/</loc>
+    <loc>//localhost:1313/posts/swiching-from-windows-to-linux/</loc>
     <lastmod>2024-07-03T15:31:21+07:00</lastmod>
   </url><url>
-    <loc>https://tiamatt.dev/about/</loc>
+    <loc>//localhost:1313/about/</loc>
   </url><url>
-    <loc>https://tiamatt.dev/archives/</loc>
-  </url><url>
-    <loc>https://tiamatt.dev/categories/</loc>
-  </url><url>
-    <loc>https://tiamatt.dev/search/</loc>
+    <loc>//localhost:1313/categories/</loc>
   </url>
 </urlset>

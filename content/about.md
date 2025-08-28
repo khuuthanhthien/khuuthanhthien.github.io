@@ -1,30 +1,22 @@
-+++
-title = "ABOUT"
-sumary = "about me"
-ShowToc = false
-ShowReadingTime = false
-ShowBreadCrumbs = false
-draft = false
-author = [""]
-cover = {"image" = "about_cover.jpg"}
-+++
+---
+title: "About"
+draft: false
+---
 
-### About me
-I'm a student at University of Science - VNUHCM, currently pursuing a B.Sc. in Information Technology with a focus on ML/AI.
+![cover](/about_cover.jpg)
 
-### Occupation
-- **Mechanical Keyboards and IEMs**: My niche hobbies. I love the endless posisbilities of customizing mechanical keyboards and the immersive experience of high-quality in-ear monitors.
-- **Open Source**: I enjoy using and supporting open-source software for its flexibility, transparency.
-- **Linux**: My go-to operating system. I love the control, customization, and the philosophy behind it—plus, it just works the way I want it to.
-- **Programming Languages**: Mainly Python and C/C++, with a light knowledge of HTML/CSS.
 
-### How I got this blog running
-I created this blog because the idea of learning web development fascinates me. And building myself a personal website is my way of learning as I go.
+## Hi,
+I’m Thien, an IT student at the University of Science – VNUHCM. Currently pretending to know what I’m doing with machine learning and AI.
 
-This place is where I write about my thoughts, experiences, and things I find interesting. It came to life as a way for me to document my journey in learning and growing as a person.
+## What I like
+- **Mechanical Keyboards & High Fidelity Audio** - because typing faster obviously makes the code better, and yes, I did spend too much on IEMs. 
+- **Open Source & Linux** -  I use Linux daily, mostly because I enjoy fixing the problems I created myself.
+- **NLP** - tweaking AI models to serve my own purposes, because why not.
 
-I don't have a deep knowledge of web development, still I made this work using:
+## Why this blog exists in the first place
+Honestly? Just a spot to mess around, break things, and maybe share something useful along the way.
 
-- **Hugo** - A static site generator written in GO, introduced to me by a friend. Easy to configure and use, with posts written in markdown.
-- **PaperMod theme** - A fast, clean, responsive Hugo theme.
-- **Vercel** - A cloud platform for hosting static sites. Easy to deploy and manage, it’s connected to my GitHub repository and automatically deploys my site whenever I push new changes.
+Expect notes, half-baked experiments, random thoughts about tech and whatever else I stumble into.
+
+Built with [**Hugo**](https://gohugo.io/) $\cdot$ [**Archie Theme**](https://github.com/athul/archie.git) $\cdot$ Deployed on [**Vercel**](https://vercel.com/).

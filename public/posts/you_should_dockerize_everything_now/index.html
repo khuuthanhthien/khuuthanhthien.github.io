@@ -1,369 +1,102 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html><head lang="en"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>You should Dockerize everything! - serenity</title><link rel="icon" type="image/png" href=favicon.ico /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Not at all a sophisticated guide on using Docker." />
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content="//localhost:1313/posts/you_should_dockerize_everything_now/">
+  <meta property="og:site_name" content="serenity">
+  <meta property="og:title" content="You should Dockerize everything!">
+  <meta property="og:description" content="Not at all a sophisticated guide on using Docker.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-09-04T08:02:50+07:00">
+    <meta property="article:modified_time" content="2024-09-04T08:02:50+07:00">
+    <meta property="article:tag" content="Tech">
+    <meta property="article:tag" content="Docker">
 
-<head><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>You should Dockerize everything, NOW! | serenity</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<meta name="keywords" content="tech, docker">
-<meta name="description" content="Not at all a sophisticated guide on using Docker.">
-<meta name="author" content="">
-<link rel="canonical" href="https://tiamatt.dev/posts/you_should_dockerize_everything_now/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.47d954f656599dc0a71ed2c8b1b44fa60182ea8c9172869d9a430b3ba1467c4a.css" integrity="sha256-R9lU9lZZncCnHtLIsbRPpgGC6oyRcoadmkMLO6FGfEo=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://tiamatt.dev/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://tiamatt.dev/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://tiamatt.dev/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://tiamatt.dev/apple-touch-icon.png">
-<link rel="mask-icon" href="https://tiamatt.dev/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://tiamatt.dev/posts/you_should_dockerize_everything_now/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="You should Dockerize everything!">
+  <meta name="twitter:description" content="Not at all a sophisticated guide on using Docker.">
+<link rel="stylesheet" href="//localhost:1313/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css" type="text/css"><link rel="stylesheet" href="//localhost:1313/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css" type="text/css"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
-            }
-        }
-
-    </style>
-</noscript>
-<script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-3TRVBMEW7X"
-></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-
-    gtag("config", "G-3TRVBMEW7X");
-</script>
-<meta property="og:title" content="You should Dockerize everything, NOW!" />
-<meta property="og:description" content="Not at all a sophisticated guide on using Docker." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://tiamatt.dev/posts/you_should_dockerize_everything_now/" />
-<meta property="og:image" content="https://tiamatt.dev/docker101/docker101.jpg" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-09-04T08:02:50+07:00" />
-<meta property="article:modified_time" content="2024-09-04T08:02:50+07:00" />
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://tiamatt.dev/docker101/docker101.jpg" />
-<meta name="twitter:title" content="You should Dockerize everything, NOW!"/>
-<meta name="twitter:description" content="Not at all a sophisticated guide on using Docker."/>
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://tiamatt.dev/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "You should Dockerize everything, NOW!",
-      "item": "https://tiamatt.dev/posts/you_should_dockerize_everything_now/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "You should Dockerize everything, NOW!",
-  "name": "You should Dockerize everything, NOW!",
-  "description": "Not at all a sophisticated guide on using Docker.",
-  "keywords": [
-    "tech", "docker"
-  ],
-  "articleBody": " After a few days of playing around with Docker. I think my experience on this platform would be somewhat useful to share.\nThis serve as a guide into running simple Docker containers. It’s not a comprehensive guide but rather a detailed one.\nWhat is Docker? Docker is an open-source platform designed to automate the deployment, scaling and management of applications in lightweight Containers - a form of virtualization that allows the packaging of an application along with all of its dependencies into a single package that can run seamlessly across machines with different hardware configurations.\nWhy Docker? I personally find these to be the biggest benefits when using Docker.\nConsistent Environment: Using containers, Docker ensures that if an application works on the development machine, it can work the same way in other machines. Help avoiding the classic situation “But…It worked on my machine!”. Compared to Virtual Machines (VM): Docker containers are much more lightweight and easy to manage than VMs because they somewhat represent a stripped down version of a VM while sharing the host OS kernel instead of using their own, mitigating the overhead. Version control and rollbacks: Docker images can be versioned, allowing developers to track changes and roll back to previous versions if something goes wrong. Some situations you can use Docker Development environment consistency: let’s say you’re working on a group project that requires specific versions of programming languages, databases or other dependencies. Instead of installing everything directly on your system, you can use Docker to create a consistent environment that can be reproduced and shared with others effortlessly. It prevents “works on my machine” issues. Playing around with new technologies: You want to try out a new batabase, web server or a python module. Instead of installing it directly on your system, you can test it out in a Docker container. This avoids cluttering your system with new software that you’re not sure if you would ever need again, and allows for easy cleanup after finish experimenting. Running multiple projects without conflicting dependencies: You have two different projects that require different versions of Python. Docker can wrap them up in their own environment and neither will conflict with each other. The Architecture In order to run a basic application inside a Docker container, 3 of these concepts are involved: Dockerfile - the blueprint that tells Docker how to handle you applications, including installing dependencies and configure its behaviour. Docker image - the executable package, built from Dockerfile that contains everything your application need to get runnning. Docker container - the runtime instance, when you run the Docker image, it creates a container, which is the actual environment where your application runs. Additionally:\nDocker Registry is a service that stores Docker Images. Docker Hub is the default public registry, but you can also set up private registries for internal use.\nDocker Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services and behaviours. Then, with a single command, you create and start all the services from your configuration.\nHow it works Docker uses a client-server architecture. The Docker client talks to the Docker daemon, which does the heavy lifting of building, running, and distributing your Docker containers.\nClient side User interacts with Docker CLI or Docker Desktop, were they can build, run, and manage Docker containers. Server side Commands from Client side will be received and processed by Docker API, which is a RESTful API that provides a way for clients to communicate with the Docker Daemon - a running service of Docker, goes by the name of dockerd. Docker Daemon is responsible for creating, running, and managing Docker containers. Start Docking We will learn how to dockerize a simple python program and deploy its container.\nCreate a structural directory for building Docker image Below serves as a simple file organization for Docker to build from your source.\napplication_name/ ├── Dockerfile ├── requirements.txt └── source.py In which:\nDockerfile: It contains instructions for Docker engine to start installing dependencies and building your containers. The file name is mandatory and case sensitive, make sure to create the file with the exact name, or else Docker won’t recognize it as a Dockerfile. requirements.txt: is a simple text file listing the names of required Python libraries. source.py: contains the source code for your Python application. [source.py] Putting code into your Python application You can use your own code and libraries, or use this sample code:\n1 2 3 4 5 6 7 8 9 from sympy import Matrix, pprint def multiplyMatrix(A, B): if len(A[0]) != len(B): return None return [[sum(a*b for a,b in zip(A_row,B_col)) for B_col in zip(*B)] for A_row in A] matrix = Matrix(multiplyMatrix([[1,2],[3,4]],[[1,2],[3,4]])) pprint(matrix) Import Matrix and pprint from sympy to convert a 2D array into matrix and print it. Define the function multiplyMatrix(). Create a matrix object which holds the value of 2 matrices multiplied with each other. Use pprint() to print out the matrix into the console. [requirements.txt] List your application’s dependencies From the above python script, sympy is required to run the program. In order for Docker to install dependencies, we need to put the names of those libraries into requirements.txt:\nsympy Simple as that, we have included everything our script need to run.\nIn Python, installing multiple libraries can be done by using pip on a text file that lists the included libraries, each sitting on their own line.\n[Dockerfile] Configure Dockerfile behaviour Now that we have setup everything. It’s time to configure how Docker will build your application into an image.\nFROM python:latest WORKDIR /app COPY requirements.txt . RUN pip install --no-cache-dir -r requirements.txt COPY . . CMD [\"python\", \"source.py\"] FROM: specifies the base image to build upon. In this case, we use the latest Python image. This line will pull the latest Python image from Docker Hub to build everything else. The base image is the starting point for the Dockerfile. It can be any image available on Docker Hub or a custom image you have created. WORKDIR: sets the working directory inside the container. By default, we use /app. COPY: copies files from the host machine to the container. We copy requirements.txt to the working directory. RUN: executes a command inside the container. Here, we install the dependencies listed in requirements.txt by using Python’s package manager pip. COPY . .: copies the rest of the files from the host machine to the container. CMD: specifies the command to run when the container starts. In this case, we run the Python script source.py. Building Docker image After setting up the Dockerfile, we can now build the Docker image.\nYour terminal location must be in the same directory where the file Dockerfile is located so Docker engine can detect that file and executing the process.\ndocker build -t : . -t :: This flags tags the image with a name and an optional tag. The tag is used to differentiate between different versions of the same image. If not specified, Docker will default to latest. .: specifies the build context. Docker will look for the Dockerfile in the current directory. Additionally, you can add --no-cache to the build command to force Docker to rebuild the image from scratch if the previously built image is broken during the process. If not specified, Docker will reuse the cache to speed up the build process.\nExample:\ndocker build -t matrix-multiplication:1.0 --no-cache . Once the build is complete, you can verify that the image has been created by listing all Docker images:\ndocker images The result should be similar to this:\n\u003e docker images REPOSITORY TAG IMAGE ID CREATED SIZE matrix-multiplication 1.0 7565e3e77b8a 11 seconds ago 1.1GB Deploying a Container from the built Image To deploy the newly built image, simply use docker run command:\ndocker run You can replace with which is the ID of the image listed in docker images command. Example:\ndocker run matrix-multiplication You can also choose to run a specific version of your image by adding to the image name, similar to the build command.\nTo see which container is running, use:\ndocker ps Or to see all containers created, including those that have stopped, use:\ndocker ps -a Docker Container Data Due to Docker containers being ephemeral, which mean they are designed to be disposable, data created withing the process of running will be delete after a container ends its cycle.\nThere will be situations where you need data persistence. In order to do so, a Docker container has 2 ways to mount its working directory to the host machine’s filesystem: Bind Mount and Docker Volume.\nThe differences It may seems like both methods serve the same purpose, but there are some differences between them:\nFeature Bind Mount Docker Volume Binding method Links a directory in the container to specified directory on the host machine Links a directory in the container to a Docker Volume (in Linux, they are usually located at /var/lib/docker/volumes/) Data Persistence Data is stored in the host machine’s filesystem Data is stored in the Docker Volume Security Less secure as it can access the host machine’s filesystem, any changes made to the container directory will be seen directly on the filesystem More secure as it is abstracted away from the host machine’s filesystem Use case Useful for development purpose as binded data can be modified outside of the container Useful for production purpose as it is more secure and isolated To create a Docker Volume, you can use the command:\ndocker volume create To see created Volumes, use:\ndocker volume ls To see info about a Volume, use:\ndocker volume inspect To remove a volume, use:\ndocker volume rm More Docker commands docker start : starts a stopped container. You can find the container ID by using docker ps.\ndocker stop : stops a running container.\ndocker attach : attaches your terminal to a running container.\ndocker rm : removes a container from your local machine.\ndocker rmi or docker rmi : removes an image from your local machine.\nMore docker run tags -d: enables docker to run in detach mode, meaning the container will run in the background. This is useful for running services or applications that you want to keep running in the background while continue to use your terminal.\n--name : assign a name of choice to the container.\n-p :: maps a port from the host machine to the container. This is useful when you want to access a service running inside the container from the host machine.\nExample: -p 8080:80 maps port 8080 on the host to port 80 in the container. --rm: Automatically removes the container when it exits. Useful for running short-lived containers.\n-it: combines 2 flags:\n-i(interactive): keeps STDIN open even if not attached to the container. Useful for interacting with a container in real time, such as entering commands or running a shell inside the container. -t(TTY): allocates a pseudo-TTY (a terminal interface). This makes the container behave like a terminal session, allowing you to interact with it as if it were a CLI(command line interface). Combining -i and -t allows you to run a container in interactive mode with a TTY. It’s equivalent to saying “keep the input open (-i) and give me a terminal interface (-t)”. -v :: mounts a volume from the host machine to the container.\nExample: -v /path/on/host:/path/on/container mounts the /path/on/host directory on the host to the /path/on/container directory in the container. ",
-  "wordCount" : "1920",
-  "inLanguage": "en",
-  "image":"https://tiamatt.dev/docker101/docker101.jpg","datePublished": "2024-09-04T08:02:50+07:00",
-  "dateModified": "2024-09-04T08:02:50+07:00",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://tiamatt.dev/posts/you_should_dockerize_everything_now/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "serenity",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://tiamatt.dev/favicon.ico"
-    }
-  }
-}
-</script>
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="//localhost:1313/css/main.6a0f23ea50fd34b46fee262a5a68e17d458c51a2bc99ba1ba018065de6b180c3.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="//localhost:1313/css/dark.50b57e12d401420df23965fed157368aba37b76df0ecefd0b1ecd4da664f01a0.css" media="(prefers-color-scheme: dark)"  /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+					renderMathInElement(document.body, {
+							delimiters: [
+									{left: "$$", right: "$$", display: true},
+									{left: "$", right: "$", display: false}
+							]
+					});
+			});
+		</script>
+		
+		
+		<link rel="stylesheet" type="text/css" href="//localhost:1313/css/custom.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+		
 </head>
-
-<body class="" id="top">
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
-    } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
-    }
-
-</script>
-
-<header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="https://tiamatt.dev/" accesskey="h" title="serenity (Alt + H)">serenity</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu">
-            <li>
-                <a href="https://tiamatt.dev/archives/" title="Archives">
-                    <span>Archives</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://tiamatt.dev/search/" title="Search (Alt &#43; /)" accesskey=/>
-                    <span>Search</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://tiamatt.dev/tags/" title="Tags">
-                    <span>Tags</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://tiamatt.dev/about/" title="About">
-                    <span>About</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="//localhost:1313/">serenity</a>
+	</div>
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/tags">Tags</a>
+		
+		<a href="/about">About</a>
+		
+		<a href="/posts">All posts</a>
+		
+		
+	</nav>
 </header>
-<main class="main">
 
-<article class="post-single">
-  <header class="post-header">
-    <div class="breadcrumbs"><a href="https://tiamatt.dev/">Home</a>&nbsp;»&nbsp;<a href="https://tiamatt.dev/posts/">Posts</a></div>
-    <h1 class="post-title entry-hint-parent">
-      You should Dockerize everything, NOW!
-    </h1>
-    <div class="post-meta"><span title='2024-09-04 08:02:50 +0700 +07'>September 4, 2024</span>&nbsp;·&nbsp;10 min
-
-</div>
-  </header> 
-<figure class="entry-cover"><img loading="eager" src="https://tiamatt.dev/docker101/docker101.jpg" alt="">
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">You should Dockerize everything!</h1>
+          <div class="meta">Posted on Sep 4, 2024</div>
+        </div>
         
-</figure><aside id="toc-container" class="toc-container wide">
-    <div class="toc">
-        <details  open>
-            <summary accesskey="c" title="(Alt + C)">
-                <span class="details">Table of Contents</span>
-            </summary>
-
-            <div class="inner"><ul>
-                    <li>
-                        <a href="#what-is-docker" aria-label="What is Docker?">What is Docker?</a><ul>
-                            <ul>
-                            
-                    <li>
-                        <a href="#why-docker" aria-label="Why Docker?">Why Docker?</a></li>
-                    <li>
-                        <a href="#some-situations-you-can-use-docker" aria-label="Some situations you can use Docker">Some situations you can use Docker</a></li></ul>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#the-architecture" aria-label="The Architecture">The Architecture</a></li>
-                    <li>
-                        <a href="#how-it-works" aria-label="How it works">How it works</a><ul>
-                            <ul>
-                            
-                    <li>
-                        <a href="#client-side" aria-label="Client side">Client side</a></li>
-                    <li>
-                        <a href="#server-side" aria-label="Server side">Server side</a></li></ul>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#start-docking" aria-label="Start Docking">Start Docking</a><ul>
-                            <ul>
-                            
-                    <li>
-                        <a href="#create-a-structural-directory-for-building-docker-image" aria-label="Create a structural directory for building Docker image">Create a structural directory for building Docker image</a></li>
-                    <li>
-                        <a href="#sourcepy-putting-code-into-your-python-application" aria-label="[source.py] Putting code into your Python application">[source.py] Putting code into your Python application</a></li>
-                    <li>
-                        <a href="#requirementstxt--list-your-applications-dependencies" aria-label="[requirements.txt]  List your application&rsquo;s dependencies">[requirements.txt]  List your application&rsquo;s dependencies</a></li>
-                    <li>
-                        <a href="#dockerfile-configure-dockerfile-behaviour" aria-label="[Dockerfile] Configure Dockerfile behaviour">[Dockerfile] Configure Dockerfile behaviour</a></li>
-                    <li>
-                        <a href="#building-docker-image" aria-label="Building Docker image">Building Docker image</a></li>
-                    <li>
-                        <a href="#deploying-a-container-from-the-built-image" aria-label="Deploying a Container from the built Image">Deploying a Container from the built Image</a></li></ul>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#docker-container-data" aria-label="Docker Container Data">Docker Container Data</a><ul>
-                            <ul>
-                            
-                    <li>
-                        <a href="#the-differences" aria-label="The differences">The differences</a></li></ul>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#more-docker-commands" aria-label="More Docker commands">More Docker commands</a></li>
-                    <li>
-                        <a href="#more-docker-run-tags" aria-label="More docker run tags">More <code>docker run</code> tags</a>
-                    </li>
-                </ul>
-            </div>
-        </details>
-    </div>
-</aside>
-<script>
-    let activeElement;
-    let elements;
-    window.addEventListener('DOMContentLoaded', function (event) {
-        checkTocPosition();
-
-        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
-         
-         activeElement = elements[0];
-         const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
-         document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
-     }, false);
-
-    window.addEventListener('resize', function(event) {
-        checkTocPosition();
-    }, false);
-
-    window.addEventListener('scroll', () => {
-        
-        activeElement = Array.from(elements).find((element) => {
-            if ((getOffsetTop(element) - window.pageYOffset) > 0 &&
-                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
-                return element;
-            }
-        }) || activeElement
-
-        elements.forEach(element => {
-             const id = encodeURI(element.getAttribute('id')).toLowerCase();
-             if (element === activeElement){
-                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
-             } else {
-                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
-             }
-         })
-     }, false);
-
-    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
-    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
-    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
-
-    function checkTocPosition() {
-        const width = document.body.scrollWidth;
-
-        if (width - main - (toc * 2) - (gap * 4) > 0) {
-            document.getElementById("toc-container").classList.add("wide");
-        } else {
-            document.getElementById("toc-container").classList.remove("wide");
-        }
-    }
-
-    function getOffsetTop(element) {
-        if (!element.getClientRects().length) {
-            return 0;
-        }
-        let rect = element.getBoundingClientRect();
-        let win = element.ownerDocument.defaultView;
-        return rect.top + win.pageYOffset;
-    }
-</script>
-
-  <div class="post-content"><blockquote>
+        <section class="body">
+          <p><img src="/docker101/docker101.jpg" alt="cover"></p>
+<blockquote>
 <p>After a few days of playing around with Docker. I think my experience on this platform would be somewhat useful to share.</p>
-<p>This serve as a guide into running simple Docker containers. It&rsquo;s not a comprehensive guide but rather a detailed one.</p></blockquote>
+<p>This serve as a guide into running simple Docker containers. It&rsquo;s not a comprehensive guide but rather a detailed one, based on what I have learned.</p></blockquote>
 <hr>
-<h1 id="what-is-docker">What is Docker?<a hidden class="anchor" aria-hidden="true" href="#what-is-docker">#</a></h1>
+<h1 id="what-is-docker">What is Docker?</h1>
 <p>Docker is an open-source platform designed to automate the deployment, scaling and management of applications in lightweight <strong>Containers</strong> - a form of virtualization that allows the packaging of an application along with all of its dependencies into a single package that can run seamlessly across machines with different hardware configurations.</p>
-<h3 id="why-docker">Why Docker?<a hidden class="anchor" aria-hidden="true" href="#why-docker">#</a></h3>
+<h3 id="why-docker">Why Docker?</h3>
 <p>I personally find these to be the biggest benefits when using Docker.</p>
 <ol>
 <li><strong>Consistent Environment</strong>: Using containers, Docker ensures that if an application works on the development machine, it can work the same way in other machines. Help avoiding the classic situation &ldquo;But&hellip;It worked on my machine!&rdquo;.</li>
 <li><strong>Compared to Virtual Machines (VM)</strong>: Docker containers are much more lightweight and easy to manage than VMs because they somewhat represent a stripped down version of a VM while sharing the host OS kernel instead of using their own, mitigating the overhead.</li>
 <li><strong>Version control and rollbacks</strong>: Docker images can be versioned, allowing developers to track changes and roll back to previous versions if something goes wrong.</li>
 </ol>
-<h3 id="some-situations-you-can-use-docker">Some situations you can use Docker<a hidden class="anchor" aria-hidden="true" href="#some-situations-you-can-use-docker">#</a></h3>
+<h3 id="some-situations-you-can-use-docker">Some situations you can use Docker</h3>
 <ol>
 <li><strong>Development environment consistency</strong>: let&rsquo;s say you&rsquo;re working on a group project that requires specific versions of programming languages, databases or other dependencies. Instead of installing everything directly on your system, you can use Docker to create a consistent environment that can be reproduced and shared with others effortlessly. It prevents &ldquo;works on my machine&rdquo; issues.</li>
 <li><strong>Playing around with new technologies</strong>: You want to try out a new batabase, web server or a python module. Instead of installing it directly on your system, you can test it out in a Docker container. This avoids cluttering your system with new software that you&rsquo;re not sure if you would ever need again, and allows for easy cleanup after finish experimenting.</li>
 <li><strong>Running multiple projects without conflicting dependencies</strong>: You have two different projects that require different versions of Python. Docker can wrap them up in their own environment and neither will conflict with each other.</li>
 </ol>
 <hr>
-<h1 id="the-architecture">The Architecture<a hidden class="anchor" aria-hidden="true" href="#the-architecture">#</a></h1>
+<h1 id="the-architecture">The Architecture</h1>
 <p>In order to run a basic application inside a Docker container, 3 of these concepts are involved:
-<img loading="lazy" src="/docker101/docker_whiteboard.jpg" alt="docker_whiteboard"  />
-</p>
+<img src="/docker101/docker_whiteboard.jpg" alt="docker_whiteboard"></p>
 <ul>
 <li><strong>Dockerfile - the blueprint</strong> that tells Docker how to handle you applications, including installing dependencies and configure its behaviour.</li>
 <li><strong>Docker image - the executable package</strong>, built from <strong>Dockerfile</strong> that contains everything your application need to get runnning.</li>
@@ -379,23 +112,22 @@
 </li>
 </ul>
 <hr>
-<h1 id="how-it-works">How it works<a hidden class="anchor" aria-hidden="true" href="#how-it-works">#</a></h1>
+<h1 id="how-it-works">How it works</h1>
 <p>Docker uses a client-server architecture. The Docker client talks to the Docker daemon, which does the heavy lifting of building, running, and distributing your Docker containers.</p>
-<p><img loading="lazy" src="/docker101/docker_how_it_works.jpg" alt="diagram"  />
-</p>
-<h3 id="client-side">Client side<a hidden class="anchor" aria-hidden="true" href="#client-side">#</a></h3>
+<p><img src="/docker101/docker_how_it_works.jpg" alt="diagram"></p>
+<h3 id="client-side">Client side</h3>
 <ul>
 <li>User interacts with Docker CLI or Docker Desktop, were they can build, run, and manage Docker containers.</li>
 </ul>
-<h3 id="server-side">Server side<a hidden class="anchor" aria-hidden="true" href="#server-side">#</a></h3>
+<h3 id="server-side">Server side</h3>
 <ul>
 <li>Commands from Client side will be received and processed by Docker API, which is a RESTful API that provides a way for clients to communicate with the Docker Daemon - a running service of Docker, goes by the name of <code>dockerd</code>.</li>
 <li>Docker Daemon is responsible for creating, running, and managing Docker containers.</li>
 </ul>
 <hr>
-<h1 id="start-docking">Start Docking<a hidden class="anchor" aria-hidden="true" href="#start-docking">#</a></h1>
+<h1 id="start-docking">Start Docking</h1>
 <p>We will learn how to dockerize a simple python program and deploy its container.</p>
-<h3 id="create-a-structural-directory-for-building-docker-image">Create a structural directory for building Docker image<a hidden class="anchor" aria-hidden="true" href="#create-a-structural-directory-for-building-docker-image">#</a></h3>
+<h3 id="create-a-structural-directory-for-building-docker-image">Create a structural directory for building Docker image</h3>
 <p>Below serves as a simple file organization for Docker to build from your source.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>application_name/
 </span></span><span style="display:flex;"><span>├── Dockerfile
@@ -411,7 +143,7 @@
 <li><strong>requirements.txt</strong>: is a simple text file listing the names of required Python libraries.</li>
 <li><strong>source.py</strong>: contains the source code for your Python application.</li>
 </ul>
-<h3 id="sourcepy-putting-code-into-your-python-application">[source.py] Putting code into your Python application<a hidden class="anchor" aria-hidden="true" href="#sourcepy-putting-code-into-your-python-application">#</a></h3>
+<h3 id="sourcepy-putting-code-into-your-python-application">[source.py] Putting code into your Python application</h3>
 <p>You can use your own code and libraries, or use this sample code:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -443,14 +175,14 @@
 <li>Create a <code>matrix</code> object which holds the value of 2 matrices multiplied with each other.</li>
 <li>Use <code>pprint()</code> to print out the matrix into the console.</li>
 </ul>
-<h3 id="requirementstxt--list-your-applications-dependencies">[requirements.txt]  List your application&rsquo;s dependencies<a hidden class="anchor" aria-hidden="true" href="#requirementstxt--list-your-applications-dependencies">#</a></h3>
+<h3 id="requirementstxt--list-your-applications-dependencies">[requirements.txt]  List your application&rsquo;s dependencies</h3>
 <p>From the above python script, <code>sympy</code> is required to run the program.
 In order for Docker to install dependencies, we need to put the names of those libraries into <code>requirements.txt</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>sympy
 </span></span></code></pre></div><p>Simple as that, we have included everything our script need to run.</p>
 <blockquote>
 <p><em>In Python, installing multiple libraries can be done by using <code>pip</code> on a text file that lists the included libraries, each sitting on their own line.</em></p></blockquote>
-<h3 id="dockerfile-configure-dockerfile-behaviour">[Dockerfile] Configure Dockerfile behaviour<a hidden class="anchor" aria-hidden="true" href="#dockerfile-configure-dockerfile-behaviour">#</a></h3>
+<h3 id="dockerfile-configure-dockerfile-behaviour">[Dockerfile] Configure Dockerfile behaviour</h3>
 <p>Now that we have setup everything. It&rsquo;s time to configure how Docker will build your application into an image.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> python:latest</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
@@ -476,7 +208,7 @@ In order for Docker to install dependencies, we need to put the names of those l
 <li><code>COPY . .</code>: copies the rest of the files from the host machine to the container.</li>
 <li><code>CMD</code>: specifies the command to run when the container starts. In this case, we run the Python script <code>source.py</code>.</li>
 </ul>
-<h3 id="building-docker-image">Building Docker image<a hidden class="anchor" aria-hidden="true" href="#building-docker-image">#</a></h3>
+<h3 id="building-docker-image">Building Docker image</h3>
 <p>After setting up the Dockerfile, we can now build the Docker image.</p>
 <blockquote>
 <p>Your terminal location must be in the same directory where the file <code>Dockerfile</code> is located so Docker engine can detect that file and executing the process.</p></blockquote>
@@ -494,7 +226,7 @@ In order for Docker to install dependencies, we need to put the names of those l
 <pre tabindex="0"><code>&gt; docker images
 REPOSITORY              TAG       IMAGE ID       CREATED          SIZE
 matrix-multiplication   1.0       7565e3e77b8a   11 seconds ago   1.1GB
-</code></pre><h3 id="deploying-a-container-from-the-built-image">Deploying a Container from the built Image<a hidden class="anchor" aria-hidden="true" href="#deploying-a-container-from-the-built-image">#</a></h3>
+</code></pre><h3 id="deploying-a-container-from-the-built-image">Deploying a Container from the built Image</h3>
 <p>To deploy the newly built image, simply use <code>docker run</code> command:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run &lt;image_name&gt;
 </span></span></code></pre></div><p>You can replace <code>&lt;image_name&gt;</code> with <code>&lt;image_id&gt;</code> which is the ID of the image listed in <code>docker images</code> command.
@@ -506,13 +238,12 @@ Example:</p>
 </span></span></code></pre></div><p>Or to see all containers created, including those that have stopped, use:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker ps -a
 </span></span></code></pre></div><hr>
-<h1 id="docker-container-data">Docker Container Data<a hidden class="anchor" aria-hidden="true" href="#docker-container-data">#</a></h1>
+<h1 id="docker-container-data">Docker Container Data</h1>
 <blockquote>
 <p>Due to Docker containers being <em>ephemeral</em>, which mean they are designed to be disposable, data created withing the process of running will be delete after a container ends its cycle.</p></blockquote>
 <p>There will be situations where you need data persistence. In order to do so, a Docker container has 2 ways to mount its working directory to the host machine&rsquo;s filesystem: <strong>Bind Mount</strong> and <strong>Docker Volume</strong>.</p>
-<p><img loading="lazy" src="/docker101/container_data.jpg" alt="container_data"  />
-</p>
-<h3 id="the-differences">The differences<a hidden class="anchor" aria-hidden="true" href="#the-differences">#</a></h3>
+<p><img src="/docker101/container_data.jpg" alt="container_data"></p>
+<h3 id="the-differences">The differences</h3>
 <p>It may seems like both methods serve the same purpose, but there are some differences between them:</p>
 <table>
   <thead>
@@ -554,7 +285,7 @@ Example:</p>
 </span></span></code></pre></div><p>To remove a volume, use:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker volume rm &lt;volume_name&gt;
 </span></span></code></pre></div><hr>
-<h1 id="more-docker-commands">More Docker commands<a hidden class="anchor" aria-hidden="true" href="#more-docker-commands">#</a></h1>
+<h1 id="more-docker-commands">More Docker commands</h1>
 <ul>
 <li>
 <p><code>docker start &lt;container_id&gt;</code>: starts a stopped container. You can find the container ID by using <code>docker ps</code>.</p>
@@ -573,7 +304,7 @@ Example:</p>
 </li>
 </ul>
 <hr>
-<h1 id="more-docker-run-tags">More <code>docker run</code> tags<a hidden class="anchor" aria-hidden="true" href="#more-docker-run-tags">#</a></h1>
+<h1 id="more-docker-run-tags">More <code>docker run</code> tags</h1>
 <ul>
 <li>
 <p><code>-d</code>: enables docker to run in <strong>detach mode</strong>, meaning the container will run in the background. This is useful for running services or applications that you want to keep running in the background while continue to use your terminal.</p>
@@ -606,125 +337,38 @@ Example:</p>
 </li>
 </ul>
 
+        </section>
+        <div class="post-tags">
+          
+          
+          <nav class="nav tags">
+            <ul class="tags">
+              
+              <li><a href="/tags/tech">tech</a></li>
+              
+              <li><a href="/tags/docker">docker</a></li>
+              
+            </ul>
+          </nav>
+          
+          
+        </div>
+      </div>
 
+      
+      
+    </div>
+
+    </article>
+</main>
+<footer>
+  <div style="display:flex"><a class="soc" href="https://github.com/tiam4tt" rel="me" title="github"><i class="si si-github"></i></a><a class="border"></a><a class="soc" href="www.linkedin.com/in/khuuthanhthien" rel="me" title="linkedin"><i class="si si-linkedin"></i></a><a class="border"></a></div>
+  <div class="footer-info">
+    2025  <a
+      href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
   </div>
+</footer>
 
-  <footer class="post-footer">
-    <ul class="post-tags">
-      <li><a href="https://tiamatt.dev/tags/tech/">Tech</a></li>
-      <li><a href="https://tiamatt.dev/tags/docker/">Docker</a></li>
-    </ul>
-  </footer>
-</article>
-    </main>
-    
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu')
-    if (menu) {
-        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var mybutton = document.getElementById("top-link");
-    window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
-        } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            document.body.classList.add('dark');
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-<script>
-    document.querySelectorAll('pre > code').forEach((codeblock) => {
-        const container = codeblock.parentNode.parentNode;
-
-        const copybutton = document.createElement('button');
-        copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
-
-        function copyingDone() {
-            copybutton.innerHTML = 'copied!';
-            setTimeout(() => {
-                copybutton.innerHTML = 'copy';
-            }, 2000);
-        }
-
-        copybutton.addEventListener('click', (cb) => {
-            if ('clipboard' in navigator) {
-                navigator.clipboard.writeText(codeblock.textContent);
-                copyingDone();
-                return;
-            }
-
-            const range = document.createRange();
-            range.selectNodeContents(codeblock);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-            try {
-                document.execCommand('copy');
-                copyingDone();
-            } catch (e) { };
-            selection.removeRange(range);
-        });
-
-        if (container.classList.contains("highlight")) {
-            container.appendChild(copybutton);
-        } else if (container.parentNode.firstChild == container) {
-            
-        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-            
-            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
-        } else {
-            
-            codeblock.parentNode.appendChild(copybutton);
-        }
-    });
-</script>
-</body>
-
+</div>
+    </body>
 </html>

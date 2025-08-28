@@ -1,411 +1,126 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html><head lang="en"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Arch Install: a comprehensive guide - serenity</title><link rel="icon" type="image/png" href=favicon.ico /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="It&rsquo;s not that hard tbh." />
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content="//localhost:1313/posts/arch-install-a-comprehensive-guide/">
+  <meta property="og:site_name" content="serenity">
+  <meta property="og:title" content="Arch Install: a comprehensive guide">
+  <meta property="og:description" content="It’s not that hard tbh.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-07-08T10:23:41+07:00">
+    <meta property="article:modified_time" content="2024-07-08T10:23:41+07:00">
+    <meta property="article:tag" content="Tech">
+    <meta property="article:tag" content="Linux">
 
-<head><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Arch Install: a comprehensive guide | serenity</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<meta name="keywords" content="tech, linux">
-<meta name="description" content="Arch Linux is surprisingly easy.">
-<meta name="author" content="">
-<link rel="canonical" href="https://tiamatt.dev/posts/arch-install-a-comprehensive-guide/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.47d954f656599dc0a71ed2c8b1b44fa60182ea8c9172869d9a430b3ba1467c4a.css" integrity="sha256-R9lU9lZZncCnHtLIsbRPpgGC6oyRcoadmkMLO6FGfEo=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://tiamatt.dev/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://tiamatt.dev/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://tiamatt.dev/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://tiamatt.dev/apple-touch-icon.png">
-<link rel="mask-icon" href="https://tiamatt.dev/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://tiamatt.dev/posts/arch-install-a-comprehensive-guide/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Arch Install: a comprehensive guide">
+  <meta name="twitter:description" content="It’s not that hard tbh.">
+<link rel="stylesheet" href="//localhost:1313/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css" type="text/css"><link rel="stylesheet" href="//localhost:1313/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css" type="text/css"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
-            }
-        }
-
-    </style>
-</noscript>
-<script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-3TRVBMEW7X"
-></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-
-    gtag("config", "G-3TRVBMEW7X");
-</script>
-<meta property="og:title" content="Arch Install: a comprehensive guide" />
-<meta property="og:description" content="Arch Linux is surprisingly easy." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://tiamatt.dev/posts/arch-install-a-comprehensive-guide/" />
-<meta property="og:image" content="https://tiamatt.dev/arch_install_guide/arch_wallpaper.jpg" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-07-08T10:23:41+07:00" />
-<meta property="article:modified_time" content="2024-07-08T10:23:41+07:00" />
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://tiamatt.dev/arch_install_guide/arch_wallpaper.jpg" />
-<meta name="twitter:title" content="Arch Install: a comprehensive guide"/>
-<meta name="twitter:description" content="Arch Linux is surprisingly easy."/>
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://tiamatt.dev/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Arch Install: a comprehensive guide",
-      "item": "https://tiamatt.dev/posts/arch-install-a-comprehensive-guide/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Arch Install: a comprehensive guide",
-  "name": "Arch Install: a comprehensive guide",
-  "description": "Arch Linux is surprisingly easy.",
-  "keywords": [
-    "tech", "linux"
-  ],
-  "articleBody": "Yet another guide to installing Arch Linux ⚠️ Disclaimer: I am not responsible for the lost of data, faulty BIOS, thermonuclear war, or you only seeing your face in the screen because everything goes blank after installing graphics drivers. This is an installation guide, simplified based on my personal experience, with the only purpose is to be more approachable.\nPlease refer to the official installation guide from Arch wiki if you encounter something different that is not mentioned in this post.\nPrerequisites BACKUP ALL OF YOUR DATA A USB with at least 8GB of storage. A working computer and stable internet connection. Preparation Disable secure boot Secure Boot is a security feature that restricts your system to booting with software signed by your device’s manufacturer. This helps prevent malicious software from loading during startup. However, it can potentially prevents unsigned operating systems, like some Linux distros, from booting up.\nBy disabling Secure Boot, we enable a wider range of compatibility. Although Arch Linux is a signed distro, meaning we can potentially keep Secure Boot enabled, some of its kernel variants and other necessary packages (even proprietary ones) might not guarantee such security.\nEnter BIOS menu: You can access this menu by pressing a key while your system is booting, such as F1, F2, F12 or Esc depending on your motherboard’s manufacturer. Find the Secure boot option in your BIOS setting menu and set it to disabled. You can find this option in either the Security tab or the Boot tab. Save changes and exit. Create a bootable USB Obtain an ISO image from the official download page, scroll down to the bottom and select a server to download. You should pick the nearest server to your geographical location for optimized download speed. Choose a USB formatting tool, some of the popular ones are Balena Etcher (Windows/MacOS/Linux), Rufus (Windows), Ventoy (Windows/Linux). Follow the tool’s instruction and flash the .iso file to your USB. Boot into the live USB Boot into BIOS menu and navigate to boot menu. Select the option to boot with your USB. On successful boot, you will be greeted with the following screen: Partition the disks When recognized by the live sytem, disks are assigned to a block device such as /dev/sda or /dev/nvme0n1/. To identify your disks, use lsblk\nlsblk Results ending in rom, loop or airootfs can be ignored.\nTo partition your selected disk, it is recommended to use cfdisk, which is similar to fdisk but with a less complicated interface.\ncfdisk /dev/your_disk_name You should see a similar screen as follow, with sda being your disk name (e.g.nvme0n1): From here, take your time planning a proper long-term partitioning layout to avoid complicated resizing procedures in the future.\nRecommended layout: Mount point Partition type Suggested size /boot EFI partition 1GB [SWAP] Swap partition At least 4GB / Root partition Remainder of storage (at least 23-32GB) If the disk from which you want to partition already has an EFI system partition, do not create another and use the existing one instead. If you’re dual booting and your Windows system is present in the disk, there should be an EFI partion which can be shared with Arch.\nSwap virtual memory partition is optional.\nAfter creating new partitions, save the changes by choosing [write].\nWhen you’re done partitioning, use lsblk again to make sure the layout is correct. Format the partitions Root partition (ext4)\nmkfs.ext4 /dev/your_root_partition Swap partition (swap)\nNo need to perform this if you didn’t create a [SWAP] partition in the previous step.\nmkswap /dev/your_swap_partition EFI partition (fat32)\n⚠️ If you did not create the EFI system partition during the partitioning step. DO NOT reformat the previously existing EFI partition, it can destroy the bootloader of other installed operating systems.\nmkfs.fat -F 32 /dev/your_efi_partition Mount the partitions Mount the root volume\nmount /dev/your_root_partition /mnt Mount the EFI system partition Create a mounting point under /mnt for EFI beforehand with mkdir:\nmkdir -p /mnt/boot/efi Then mount the efi partition:\nmount /dev/your_efi_partition /mnt/boot/efi Afternatively, you can run mount with --mkdir option:\nmount --mkdir /dev/your_efi_partition /mnt/boot/efi Enable swap partition\nIf you had [SWAP] created, simply enable it:\nswapon /dev/your_swap_partition Installation Connect to the internet This step requires internet connection. To connect to a wireless network, we will use the pre-installed iwd ultility:\niwctl Next, list all your wireless interfaces/devices using this command:\ndevice list Select the preferred one, normally wlan0.\nNow scan for available networks:\nstation wlan0 scan (replace wlan0 with your preferred one)\nWhile it’s scanning, see available connections with this command:\nstation wlan0 get-networks Connect to your target Wi-Fi:\nstation wlan0 connect \"name of network/wifi\" If it’s password-protected, you will be asked for a password, enter its credentials and you should be good to go.\nExit the tool by pressing Ctrl + D. Or type exit in the console.\nWe can check the connection with ping:\nping google.com If you get bytes in reply, the you are connected. Press Ctrl + C to cancel the ping process.\nSelect the appropriate mirror It is recommended to select the optimal mirror list for your Arch Linux to ensure the fastest server response when installing or upgrading packages. The top mirror located in /etc/pacman.d/mirrorlist is chosen automatically and might not actually be the best one. To prevent this problem. First we need to sync the pacman repository:\npacman -Syy Now install reflector, a Python script that retrieves the latest mirror from Arch mirror status, filter the most up-to-date mirrors and sort them by speed.\npacman -S reflector Make a backup of mirror list:\ncp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak Find your country’s in the mirror list with reflector:\nreflector --list-countries Remember your country code in Code column.\nNow, get the good mirror list with reflector and save it to /etc/pacman.d/mirrorlist:\nreflector --sort rate -c \"country_code\" -f 10 -l 10 -n 10 --save /etc/pacman.d/mirrorlist --sort rate: sorts the mirror list by download rate, descending.\n-c: specifies which country to fetch mirror list from.\n-f 10: tells the script to fetch the fastest 10 mirrors.\n-l 10: tells the script to fetch the latest 10 mirrors.\n-n 10: tells the script to fetch the max amount of 10 mirrors.\nYou can customize the number after each filter options to your liking. Type reflector -h in the console for a full list of options.\nInstall fundamental packages Now that we have obtained a good mirror list, we can proceed to install the most basic packages for Arch Linux:\npacstrap /mnt base linux linux-firmware grub efibootmgr neovim base, linux, linux-firmware: these 3 packages provide the most standard experience and is required for a functional Arch Linux system. With linux and linux-firmware being the kernel for Linux. Alternatively they can be substituted for other variants of Linux kernel such as linux-lts, linux-zen. Make sure you install the firmware that goes with the kernel (linux-lts-firmware, linux-zen-firmware, etc.).\ngrub: the chosen bootloader for Linux system and is one of the most preferred ones.\nefibootmgr: is used to modify the EFI Boot Manager. It can create and destroy boot entries, change the boot order, change the next running boot option, and more.\nneovim: the standard text editor. Requires a basic knowledge of Vim.\nAdditionally you can add more packages to support the setup process, or install them later with pacman.\nThe installation process should take 10-15 minutes. If it fails during the time, you can run the install command again.\nConfigure the system Now that we have basically finished installing Arch Linux. These are the few steps left that prevent us from being an Arch user.\nFstab Generate file system table with this command:\ngenfstab -U /mnt \u003e\u003e /mnt/etc/fstab The content in /mnt/etc/fstab should be identical to the output when we run this command in console:\ngenfstab -U /mnt Check /mnt/etc/fstab and edit/regenerate in case of errors by using cat to print the file’s content into console:\ncat /mtn/etc/fstab Change root directory into the new system arch-chroot /mnt This command let us enter the mounted disk as root. Now you are using the newly installed Arch Linux system. Further configurations is needed so you could run it properly when reboot.\nTimezone By default Arch’s timezone if set to UTC. We can use timedatectl to change the correct timezone.\ntimedatectl list-timezones The above command lists all of the available timezones. Choose your timezone and apply it with this command:\ntimedatectl set-timezone Vietnam/Ho_Chi_Minh Replace Vietnam/Ho_Chi_Minh with the timezone that you prefer.\nLocalization This is what determine the language, numbering, date, and currency formats of our system.\n/etc/locale.gen contains all the available locales that we can choose by uncomment the lines.\nnvim /etc/locale.gen Enter edit mode by pressing i then navigate to the desired line of your locale and remove # at the beginning.\nPress Esc to enter normal mode and type :wq to save the changes and quit to console. I would recommend having en_US.UTF-8 as system language to make it easier diagnosing problems and finding solutions, you can choose an addition of your native language for other format like date, time and currency.\nCreate locale.conf and set the language accordingly:\nnvim /etc/locale.conf Add this line to the file and save it (you can replace en_US.UTF-8 with your preferred system language):\nLANG=en_US.UTF-8 Finally generate the locale configurations:\nlocale-gen You should see the chosen locales being generated.\nNetwork configuration Create a /etc/hostname file to add your computer’s hostname to the network\necho archuser \u003e /etc/hostname Replace archuser with your preferred hostname.\nNext is to create the hosts file:\nnvim /etc/hosts Add this configuration to your hosts file (replace archuser with your hostname as well):\n127.0.0.1\tlocalhost ::1\tlocalhost 127.0.1.1\tarchuser Setup root password Run the following command and set the password for your root account:\npasswd Additionally, it is strongly recommended avoid using the system as root. Best practice is to add another user and grant root access.\nuseradd -m newuser passwd newuser Replace newuser with your preferred name and choose a password.\nNow grant our new user root access and other privileges:\nusermod -aG wheel,audio,video,storage newuser The above command adds newuser to 4 groups: wheel, audio, video and storage which accordingly allowing access to super user, audio devices, video devices and storage devices control.\nFinally, we need to edit the visudo file so that root access can be granted to wheel user group:\nEDITOR=nvim visudo Uncomment %wheel ALL=(ALL:ALL) ALL to grant root access to your newly created user.\nUnmount all partitions and reboot the system:\numount -a \u0026\u0026 reboot Login with your created username and password.\nNow, unless you’re a masochist, you wouldn’t want your Linux system to be a simple terminal with text. It’s time to install a graphical interface and other utilities to make Arch Linux more usable.\nInstall graphical interface Behind the screen Linux, on its own, is a functional operating system without the need of an UI. We can interact with the system via command line interface (CLI). However, having a graphical interface installed will make things much more intuitive and task efficient.\nThere are many ways to render visual elements on your screen. Here’s a general walkthrough:\nX Window System (or X for short), is a display protocol that defines how applications talk to display, developed in 1984 and is latest at version 11 (X11). It uses a client-server model where applications (clients) send request to a central program (server) to draw things on the screen. In X, server-client is the relationship between application and the X display server itself.\nX.Org (Xorg) is a free and open source implementation of the X11 display protocol.\nWayland is a newer display protocol designed to be the successor of X11. It aims for a simpler and more secure architecture by having applications communicates directly with a compositor instead of a separate server.\nWindow manager acts as a separate program from X server. It manages how application are arranged on the screen, this include:\nPositioning (location of that window on the screen). Sizing (dimension of window). Decoration (title bars, borders,…). Behaviour (moving, resizing, minimizing/maximizing,…). May provide additional features like snapping and tiling. Compositor handles the actual rendering of windows on the screen, including:\nReceiving windows components from applications (buffers). Combining (compositing) these buffers into a final image for the display. Enabling visual effects like transparency, shadows and animations. In X11, compositor can be a separate program from the window manager, but often window managers include compositing functionality.\nIn Wayland, the compositor takes on both window management and compositing tasks, acting as a single program.\nDesktop environment (DE) is essentially the graphical interface that you interact with on top of the core Linux system. It can ultilize the use of both Wayland and X11 display protocol for display and comes packed with more features for controlling your system overall. There are many DEs to choose, each with their own set of core applications and features. Normally people will choose one of the followings:\nxfce: a minimal, light-weight DE with efficient resource consumption, suitable for old hardwares. GNOME: modern and user-friendly DE, has sleek interface and supports many extensions for customization. KDE Plasma: Feature-rich and highly customizable, the design language is generally not as catchy as GNOME but its collection of features and proprietary applications definitely balances the scale. Cinnamon: Has a familiar layout to that of Windows, holds a good balance of features and performance. In this guide, we will install KDE Plasma for graphical interface.\nOf course there are many other methods of displaying things in your screen to choose as wished such as i3 - tiling window manager, hyprland - tiling wayland compositor and many more.\nInstall KDE Plasme Desktop Environment Start by performing a full system update so that all package informations are up-to-date: sudo pacman -Syu Now install KDE Plasma sudo pacman -S plasma It will prompt you to choose which applications to install, don’t choose anything and press Enter to install all.\nplasma is a group of KDE’s core applications neccessary for a functional Desktop Environment, shipped with bluetooth and network control utilities, file manager, system settings, etc.\nAdditionally, you can install the full collection of KDE’s applications with kde-applications (please note that this package will contain many applications that you don’t need, or might need, including games and potentially bloatwares):\nsudo pacman -S kde-applications AUR Helper You’re missing out on a lot things if your Arch Linux doesn’t have an AUR Helper - a tool that simplifies interacting with the AUR. Manually downloading, building, and installing AUR packages can be cumbersome. AUR Helpers automate these tasks, making it easier and faster to install software from the AUR.\nyay will be the chosen one for this guide.\npacman -S --needed git base-devel git clone https://aur.archlinux.org/yay.git cd yay makepkg -si The user guide for yay can be found in this repository\nEnable core sevices Before you reboot into the new system. Enable sddm that KDE plasma uses as the default display manager (login screen).\nsudo systemctl enable sddm.service Also enable NetworkManager.service to be able to configure network connections on next reboot:\nsudo systemctl enable NetworkManager.service Reboot and enjoy your new Linux system:\nreboot Install additional packages If your computer has a dedicated graphics card (NVIDIA/AMD) then you should consider installing the respective drivers to make use of everything from your computer. Refer to the Arch Wiki for installation guide with AMD gpu or NVIDIA gpu.\nWelcome to the dark side, or the bright side, depends on how you put it. You did it! Welcome to the Arch realm! Taming the Arch installation process is no small feat, and you should be proud of conquering the command line and configuring your system. Now you have a powerful, customizable Arch Linux installation ready to be molded into your perfect desktop. The journey of exploration with Arch begins now!\n",
-  "wordCount" : "2615",
-  "inLanguage": "en",
-  "image":"https://tiamatt.dev/arch_install_guide/arch_wallpaper.jpg","datePublished": "2024-07-08T10:23:41+07:00",
-  "dateModified": "2024-07-08T10:23:41+07:00",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://tiamatt.dev/posts/arch-install-a-comprehensive-guide/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "serenity",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://tiamatt.dev/favicon.ico"
-    }
-  }
-}
-</script>
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="//localhost:1313/css/main.c672b4fdabbdf79c11ad5ea327db82449f931969036e2ebd7b03113b9f4beaa1.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="//localhost:1313/css/dark.3608a2e1132d31e86578d2c0017746d8055aec48e05a5f728f877bedf55a836b.css"   /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+					renderMathInElement(document.body, {
+							delimiters: [
+									{left: "$$", right: "$$", display: true},
+									{left: "$", right: "$", display: false}
+							]
+					});
+			});
+		</script>
+		
+		
+		<link rel="stylesheet" type="text/css" href="//localhost:1313/css/main.c672b4fdabbdf79c11ad5ea327db82449f931969036e2ebd7b03113b9f4beaa1.css">
+		
+		
+		<link rel="stylesheet" type="text/css" href="//localhost:1313/css/dark.3608a2e1132d31e86578d2c0017746d8055aec48e05a5f728f877bedf55a836b.css">
+		
 </head>
-
-<body class="" id="top">
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
-    } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
-    }
-
-</script>
-
-<header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="https://tiamatt.dev/" accesskey="h" title="serenity (Alt + H)">serenity</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu">
-            <li>
-                <a href="https://tiamatt.dev/archives/" title="Archives">
-                    <span>Archives</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://tiamatt.dev/search/" title="Search (Alt &#43; /)" accesskey=/>
-                    <span>Search</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://tiamatt.dev/tags/" title="Tags">
-                    <span>Tags</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://tiamatt.dev/about/" title="About">
-                    <span>About</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="//localhost:1313/">serenity</a>
+	</div>
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/tags">Tags</a>
+		
+		<a href="/about">About</a>
+		
+		<a href="/posts">All posts</a>
+		
+		
+	</nav>
 </header>
-<main class="main">
 
-<article class="post-single">
-  <header class="post-header">
-    <div class="breadcrumbs"><a href="https://tiamatt.dev/">Home</a>&nbsp;»&nbsp;<a href="https://tiamatt.dev/posts/">Posts</a></div>
-    <h1 class="post-title entry-hint-parent">
-      Arch Install: a comprehensive guide
-    </h1>
-    <div class="post-meta"><span title='2024-07-08 10:23:41 +0700 +07'>July 8, 2024</span>&nbsp;·&nbsp;13 min
-
-</div>
-  </header> 
-<figure class="entry-cover"><img loading="eager" src="https://tiamatt.dev/arch_install_guide/arch_wallpaper.jpg" alt="">
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">Arch Install: a comprehensive guide</h1>
+          <div class="meta">Posted on Jul 8, 2024</div>
+        </div>
         
-</figure><aside id="toc-container" class="toc-container wide">
-    <div class="toc">
-        <details  open>
-            <summary accesskey="c" title="(Alt + C)">
-                <span class="details">Table of Contents</span>
-            </summary>
-
-            <div class="inner"><ul>
-                    <li>
-                        <a href="#yet-another-guide-to-installing-arch-linux" aria-label="Yet another guide to installing Arch Linux">Yet another guide to installing Arch Linux</a></li>
-                    <li>
-                        <a href="#prerequisites" aria-label="Prerequisites">Prerequisites</a></li>
-                    <li>
-                        <a href="#preparation" aria-label="Preparation">Preparation</a><ul>
-                            
-                    <li>
-                        <a href="#disable-secure-boot" aria-label="Disable secure boot">Disable secure boot</a></li>
-                    <li>
-                        <a href="#create-a-bootable-usb" aria-label="Create a bootable USB">Create a bootable USB</a></li>
-                    <li>
-                        <a href="#boot-into-the-live-usb" aria-label="Boot into the live USB">Boot into the live USB</a></li>
-                    <li>
-                        <a href="#partition-the-disks" aria-label="Partition the disks">Partition the disks</a><ul>
-                            
-                    <li>
-                        <a href="#recommended-layout" aria-label="Recommended layout:">Recommended layout:</a></li></ul>
-                    </li>
-                    <li>
-                        <a href="#format-the-partitions" aria-label="Format the partitions">Format the partitions</a></li>
-                    <li>
-                        <a href="#mount-the-partitions" aria-label="Mount the partitions">Mount the partitions</a></li></ul>
-                    </li>
-                    <li>
-                        <a href="#installation" aria-label="Installation">Installation</a><ul>
-                            
-                    <li>
-                        <a href="#connect-to-the-internet" aria-label="Connect to the internet">Connect to the internet</a></li>
-                    <li>
-                        <a href="#select-the-appropriate-mirror" aria-label="Select the appropriate mirror">Select the appropriate mirror</a></li>
-                    <li>
-                        <a href="#install-fundamental-packages" aria-label="Install fundamental packages">Install fundamental packages</a></li></ul>
-                    </li>
-                    <li>
-                        <a href="#configure-the-system" aria-label="Configure the system">Configure the system</a><ul>
-                            
-                    <li>
-                        <a href="#fstab" aria-label="Fstab">Fstab</a></li>
-                    <li>
-                        <a href="#change-root-directory-into-the-new-system" aria-label="Change root directory into the new system">Change root directory into the new system</a></li>
-                    <li>
-                        <a href="#timezone" aria-label="Timezone">Timezone</a></li>
-                    <li>
-                        <a href="#localization" aria-label="Localization">Localization</a></li>
-                    <li>
-                        <a href="#network-configuration" aria-label="Network configuration">Network configuration</a></li>
-                    <li>
-                        <a href="#setup-root-password" aria-label="Setup root password">Setup root password</a></li></ul>
-                    </li>
-                    <li>
-                        <a href="#install-graphical-interface" aria-label="Install graphical interface">Install graphical interface</a><ul>
-                            
-                    <li>
-                        <a href="#behind-the-screen" aria-label="Behind the screen">Behind the screen</a></li>
-                    <li>
-                        <a href="#install-kde-plasme-desktop-environment" aria-label="Install KDE Plasme Desktop Environment">Install KDE Plasme Desktop Environment</a></li></ul>
-                    </li>
-                    <li>
-                        <a href="#aur-helper" aria-label="AUR Helper">AUR Helper</a></li>
-                    <li>
-                        <a href="#enable-core-sevices" aria-label="Enable core sevices">Enable core sevices</a></li>
-                    <li>
-                        <a href="#install-additional-packages" aria-label="Install additional packages">Install additional packages</a></li>
-                    <li>
-                        <a href="#welcome-to-the-dark-side-or-the-bright-side-depends-on-how-you-put-it" aria-label="Welcome to the dark side, or the bright side, depends on how you put it.">Welcome to the dark side, or the bright side, depends on how you put it.</a>
-                    </li>
-                </ul>
-            </div>
-        </details>
-    </div>
-</aside>
-<script>
-    let activeElement;
-    let elements;
-    window.addEventListener('DOMContentLoaded', function (event) {
-        checkTocPosition();
-
-        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
-         
-         activeElement = elements[0];
-         const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
-         document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
-     }, false);
-
-    window.addEventListener('resize', function(event) {
-        checkTocPosition();
-    }, false);
-
-    window.addEventListener('scroll', () => {
-        
-        activeElement = Array.from(elements).find((element) => {
-            if ((getOffsetTop(element) - window.pageYOffset) > 0 &&
-                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
-                return element;
-            }
-        }) || activeElement
-
-        elements.forEach(element => {
-             const id = encodeURI(element.getAttribute('id')).toLowerCase();
-             if (element === activeElement){
-                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
-             } else {
-                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
-             }
-         })
-     }, false);
-
-    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
-    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
-    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
-
-    function checkTocPosition() {
-        const width = document.body.scrollWidth;
-
-        if (width - main - (toc * 2) - (gap * 4) > 0) {
-            document.getElementById("toc-container").classList.add("wide");
-        } else {
-            document.getElementById("toc-container").classList.remove("wide");
-        }
-    }
-
-    function getOffsetTop(element) {
-        if (!element.getClientRects().length) {
-            return 0;
-        }
-        let rect = element.getBoundingClientRect();
-        let win = element.ownerDocument.defaultView;
-        return rect.top + win.pageYOffset;
-    }
-</script>
-
-  <div class="post-content"><h2 id="yet-another-guide-to-installing-arch-linux">Yet another guide to installing Arch Linux<a hidden class="anchor" aria-hidden="true" href="#yet-another-guide-to-installing-arch-linux">#</a></h2>
+        <section class="body">
+          <p><img src="/arch_install_guide/arch_wallpaper.jpg" alt="cover"></p>
+<h2 id="yet-another-guide-to-installing-arch-linux">Yet another guide to installing Arch Linux</h2>
 <blockquote>
-<p>⚠️ <strong>Disclaimer:</strong> I am not responsible for the lost of data, faulty BIOS, thermonuclear war, or you only seeing your face in the screen because everything goes blank after installing graphics drivers. This is an installation guide, simplified based on my personal experience, with the only purpose is to be more approachable.</p></blockquote>
-<blockquote>
+<p><strong>Disclaimer:</strong> I am not responsible for the lost of data, faulty BIOS, thermonuclear war, or you only seeing your face in the screen because everything goes blank after installing graphics drivers. This is an installation guide, simplified based on my personal experience, with the only purpose is to be more approachable.</p>
 <p>Please refer to the official <a href="https://wiki.archlinux.org/title/installation_guide">installation guide</a> from Arch wiki if you encounter something different that is not mentioned in this post.</p></blockquote>
 <hr>
-<h2 id="prerequisites">Prerequisites<a hidden class="anchor" aria-hidden="true" href="#prerequisites">#</a></h2>
+<h2 id="prerequisites">Prerequisites</h2>
 <ul>
 <li><strong>BACKUP ALL OF YOUR DATA</strong></li>
 <li>A USB with at least 8GB of storage.</li>
 <li>A working computer and stable internet connection.</li>
 </ul>
 <hr>
-<h2 id="preparation">Preparation<a hidden class="anchor" aria-hidden="true" href="#preparation">#</a></h2>
-<h3 id="disable-secure-boot">Disable secure boot<a hidden class="anchor" aria-hidden="true" href="#disable-secure-boot">#</a></h3>
-<p>Secure Boot is a security feature that restricts your system to booting with software signed by your device&rsquo;s manufacturer. This helps prevent malicious software from loading during startup. However, it can potentially prevents unsigned operating systems, like some Linux distros, from booting up.</p>
-<p>By disabling Secure Boot, we enable a wider range of compatibility. Although Arch Linux is a signed distro, meaning we can potentially keep Secure Boot enabled, some of its kernel variants and other necessary packages (even proprietary ones) might not guarantee such security.</p>
+<h2 id="preparation">Preparation</h2>
+<h3 id="disable-secure-boot">Disable secure boot</h3>
+<p>Secure Boot is a BIOS or UEFI feature that only allows your computer to boot software signed by the manufacturer. It is meant to stop malware from loading before the operating system starts. This sounds useful but it can also block some Linux distributions that do not include the right signatures.</p>
+<p>Arch Linux does not come signed by default. You can make it work with extra setup, but custom kernels or proprietary drivers like NVIDIA often cause problems. For that reason most people simply turn Secure Boot off because it makes installing and running Arch much easier.</p>
 <ol>
-<li>Enter BIOS menu:</li>
-</ol>
-<ul>
-<li>You can access this menu by pressing a key while your system is booting, such as F1, F2, F12 or Esc depending on your motherboard&rsquo;s manufacturer.</li>
-</ul>
-<ol start="2">
+<li>Enter BIOS menu: You can access this menu by pressing a key while your system is booting, such as F1, F2, F12 or Esc depending on your motherboard&rsquo;s manufacturer.</li>
 <li>Find the <strong>Secure boot</strong> option in your BIOS setting menu and set it to <strong>disabled</strong>. You can find this option in either the <strong>Security</strong> tab or the <strong>Boot</strong> tab.</li>
 <li>Save changes and exit.</li>
 </ol>
-<h3 id="create-a-bootable-usb">Create a bootable USB<a hidden class="anchor" aria-hidden="true" href="#create-a-bootable-usb">#</a></h3>
+<h3 id="create-a-bootable-usb">Create a bootable USB</h3>
 <ul>
 <li><strong>Obtain an ISO image</strong> from the official <a href="https://archlinux.org/download/">download</a> page, scroll down to the bottom and select a server to download. You should pick the nearest server to your geographical location for optimized download speed.</li>
 <li><strong>Choose a USB formatting tool</strong>, some of the popular ones are <a href="https://etcher.balena.io/">Balena Etcher</a> (Windows/MacOS/Linux), <a href="https://rufus.ie">Rufus</a> (Windows), <a href="https://www.ventoy.net/en/download.html">Ventoy</a> (Windows/Linux).</li>
 <li>Follow the tool&rsquo;s instruction and flash the .iso file to your USB.</li>
 </ul>
-<h3 id="boot-into-the-live-usb">Boot into the live USB<a hidden class="anchor" aria-hidden="true" href="#boot-into-the-live-usb">#</a></h3>
+<h3 id="boot-into-the-live-usb">Boot into the live USB</h3>
 <ul>
 <li>Boot into BIOS menu and navigate to <strong>boot menu</strong>. Select the option to boot with your USB.</li>
 <li>On successful boot, you will be greeted with the following screen:</li>
 </ul>
-<p><img loading="lazy" src="/arch_install_guide/first_boot.png" alt="first_boot"  />
-</p>
-<h3 id="partition-the-disks">Partition the disks<a hidden class="anchor" aria-hidden="true" href="#partition-the-disks">#</a></h3>
+<p><img src="/arch_install_guide/first_boot.png" alt="first_boot"></p>
+<h3 id="partition-the-disks">Partition the disks</h3>
 <p>When recognized by the live sytem, disks are assigned to a <em>block device</em> such as <code>/dev/sda</code> or <code>/dev/nvme0n1/</code>.
 To identify your disks, use <strong>lsblk</strong></p>
-<pre tabindex="0"><code>lsblk
-</code></pre><p>Results ending in <strong>rom</strong>, <strong>loop</strong> or <strong>airootfs</strong> can be ignored.</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lsblk
+</span></span></code></pre></div><p>Results ending in <strong>rom</strong>, <strong>loop</strong> or <strong>airootfs</strong> can be ignored.</p>
 <p>To partition your selected disk, it is recommended to use <strong>cfdisk</strong>, which is similar to <strong>fdisk</strong> but with a less complicated interface.</p>
-<pre tabindex="0"><code>cfdisk /dev/your_disk_name
-</code></pre><p>You should see a similar screen as follow, with <code>sda</code> being your disk name (e.g.<code>nvme0n1</code>):
-<img loading="lazy" src="/arch_install_guide/cfdisk1.png" alt="cfdisk1"  />
-</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cfdisk /dev/your_disk_name
+</span></span></code></pre></div><p>You should see a similar screen as follow, with <code>sda</code> being your disk name (e.g.<code>nvme0n1</code>):
+<img src="/arch_install_guide/cfdisk1.png" alt="cfdisk1"></p>
 <p>From here, take your time planning a proper long-term partitioning layout to avoid complicated resizing procedures in the future.</p>
-<h4 id="recommended-layout">Recommended layout:<a hidden class="anchor" aria-hidden="true" href="#recommended-layout">#</a></h4>
+<p><strong>Recommended layout</strong></p>
 <table>
   <thead>
       <tr>
@@ -433,71 +148,75 @@ To identify your disks, use <strong>lsblk</strong></p>
   </tbody>
 </table>
 <blockquote>
-<p>If the disk from which you want to partition already has an <strong>EFI system partition</strong>, do not create another and use the existing one instead. If you&rsquo;re dual booting and your Windows system is present in the disk, there should be an EFI partion which can be shared with Arch.</p></blockquote>
-<blockquote>
+<p>If the disk from which you want to partition already has an <strong>EFI system partition</strong>, do not create another and use the existing one instead. If you&rsquo;re dual booting and your Windows system is present in the disk, there should be an EFI partion which can be shared with Arch.</p>
 <p><strong>Swap</strong> virtual memory partition is optional.</p></blockquote>
 <p>After creating new partitions, save the changes by choosing <strong>[write]</strong>.</p>
 <ul>
 <li>When you&rsquo;re done partitioning, use <code>lsblk</code> again to make sure the layout is correct.</li>
 </ul>
-<h3 id="format-the-partitions">Format the partitions<a hidden class="anchor" aria-hidden="true" href="#format-the-partitions">#</a></h3>
+<h3 id="format-the-partitions">Format the partitions</h3>
 <p><strong>Root partition (ext4)</strong></p>
-<pre tabindex="0"><code>mkfs.ext4 /dev/your_root_partition
-</code></pre><p><strong>Swap partition (swap)</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkfs.ext4 /dev/your_root_partition
+</span></span></code></pre></div><p><strong>Swap partition (swap)</strong></p>
 <p>No need to perform this if you didn&rsquo;t create a <strong>[SWAP]</strong> partition in the previous step.</p>
-<pre tabindex="0"><code>mkswap /dev/your_swap_partition
-</code></pre><p><strong>EFI partition (fat32)</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkswap /dev/your_swap_partition
+</span></span></code></pre></div><p><strong>EFI partition (fat32)</strong></p>
 <blockquote>
 <p>⚠️ If you did not create the EFI system partition during the partitioning step. <strong>DO NOT</strong> reformat the previously existing EFI partition, it can destroy the bootloader of other installed operating systems.</p></blockquote>
-<pre tabindex="0"><code>mkfs.fat -F 32 /dev/your_efi_partition
-</code></pre><h3 id="mount-the-partitions">Mount the partitions<a hidden class="anchor" aria-hidden="true" href="#mount-the-partitions">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkfs.fat -F <span style="color:#a5d6ff">32</span> /dev/your_efi_partition
+</span></span></code></pre></div><h3 id="mount-the-partitions">Mount the partitions</h3>
 <p><strong>Mount the root volume</strong></p>
-<pre tabindex="0"><code>mount /dev/your_root_partition /mnt
-</code></pre><p><strong>Mount the EFI system partition</strong>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mount /dev/your_root_partition /mnt
+</span></span></code></pre></div><p><strong>Mount the EFI system partition</strong>
 Create a mounting point under <code>/mnt</code> for EFI beforehand with <code>mkdir</code>:</p>
-<pre tabindex="0"><code>mkdir -p /mnt/boot/efi
-</code></pre><p>Then mount the efi partition:</p>
-<pre tabindex="0"><code>mount /dev/your_efi_partition /mnt/boot/efi
-</code></pre><p>Afternatively, you can run <code>mount</code> with <code>--mkdir</code> option:</p>
-<pre tabindex="0"><code>mount --mkdir /dev/your_efi_partition /mnt/boot/efi
-</code></pre><p><strong>Enable swap partition</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p /mnt/boot/efi
+</span></span></code></pre></div><p>Then mount the efi partition:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mount /dev/your_efi_partition /mnt/boot/efi
+</span></span><span style="display:flex;"><span><span style="color:#a5d6ff">```</span>bash
+</span></span><span style="display:flex;"><span>Afternatively, you can run <span style="color:#a5d6ff">`</span>mount<span style="color:#a5d6ff">`</span> with <span style="color:#a5d6ff">`</span>--mkdir<span style="color:#a5d6ff">`</span> option:
+</span></span><span style="display:flex;"><span><span style="color:#a5d6ff">```</span>bash
+</span></span><span style="display:flex;"><span>mount --mkdir /dev/your_efi_partition /mnt/boot/efi
+</span></span></code></pre></div><p><strong>Enable swap partition</strong></p>
 <p>If you had [SWAP] created, simply enable it:</p>
-<pre tabindex="0"><code>swapon /dev/your_swap_partition
-</code></pre><hr>
-<h2 id="installation">Installation<a hidden class="anchor" aria-hidden="true" href="#installation">#</a></h2>
-<h3 id="connect-to-the-internet">Connect to the internet<a hidden class="anchor" aria-hidden="true" href="#connect-to-the-internet">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>swapon /dev/your_swap_partition
+</span></span></code></pre></div><hr>
+<h2 id="installation">Installation</h2>
+<h3 id="connect-to-the-internet">Connect to the internet</h3>
 <p>This step requires internet connection. To connect to a wireless network, we will use the pre-installed <code>iwd</code> ultility:</p>
-<pre tabindex="0"><code>iwctl
-</code></pre><p>Next, list all your wireless interfaces/devices using this command:</p>
-<pre tabindex="0"><code>device list
-</code></pre><p>Select the preferred one, normally <code>wlan0</code>.</p>
-<p>Now scan for available networks:</p>
-<pre tabindex="0"><code>station wlan0 scan
-</code></pre><p>(replace <code>wlan0</code> with your preferred one)</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>iwctl
+</span></span></code></pre></div><p>Next, list all your wireless interfaces/devices using this command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>device list
+</span></span><span style="display:flex;"><span><span style="color:#a5d6ff">```</span>bash
+</span></span><span style="display:flex;"><span>Select the preferred one, normally <span style="color:#a5d6ff">`</span>wlan0<span style="color:#a5d6ff">`</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Now scan <span style="color:#ff7b72">for</span> available networks:
+</span></span><span style="display:flex;"><span><span style="color:#a5d6ff">```</span>bash
+</span></span><span style="display:flex;"><span>station wlan0 scan
+</span></span></code></pre></div><p>(replace <code>wlan0</code> with your preferred one)</p>
 <p>While it&rsquo;s scanning, see available connections with this command:</p>
-<pre tabindex="0"><code>station wlan0 get-networks
-</code></pre><p>Connect to your target Wi-Fi:</p>
-<pre tabindex="0"><code>station wlan0 connect &#34;name of network/wifi&#34;
-</code></pre><p><em>If it&rsquo;s password-protected, you will be asked for a password, enter its credentials and you should be good to go.</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>station wlan0 get-networks
+</span></span></code></pre></div><p>Connect to your target Wi-Fi:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>station wlan0 connect <span style="color:#a5d6ff">&#34;name of network/wifi&#34;</span>
+</span></span></code></pre></div><p><em>If it&rsquo;s password-protected, you will be asked for a password, enter its credentials and you should be good to go.</em></p>
 <p>Exit the tool by pressing <strong>Ctrl + D</strong>. Or type <code>exit</code> in the console.</p>
 <p>We can check the connection with <code>ping</code>:</p>
-<pre tabindex="0"><code>ping google.com
-</code></pre><p>If you get bytes in reply, the you are connected. Press <strong>Ctrl + C</strong> to cancel the ping process.</p>
-<h3 id="select-the-appropriate-mirror">Select the appropriate mirror<a hidden class="anchor" aria-hidden="true" href="#select-the-appropriate-mirror">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ping google.com
+</span></span></code></pre></div><p>If you get bytes in reply, the you are connected. Press <strong>Ctrl + C</strong> to cancel the ping process.</p>
+<h3 id="select-the-appropriate-mirror">Select the appropriate mirror</h3>
 <p>It is recommended to select the optimal mirror list for your Arch Linux to ensure the fastest server response when installing or upgrading packages.
 The top mirror located in <code>/etc/pacman.d/mirrorlist</code> is chosen automatically and might not actually be the best one.
 To prevent this problem. First we need to sync the pacman repository:</p>
-<pre tabindex="0"><code>pacman -Syy
-</code></pre><p>Now install <code>reflector</code>, a Python script that retrieves the latest mirror from <a href="https://archlinux.org/mirrors/status/">Arch mirror status</a>, filter the most up-to-date mirrors and sort them by speed.</p>
-<pre tabindex="0"><code>pacman -S reflector
-</code></pre><p>Make a backup of mirror list:</p>
-<pre tabindex="0"><code>cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
-</code></pre><p>Find your country&rsquo;s in the mirror list with reflector:</p>
-<pre tabindex="0"><code>reflector --list-countries
-</code></pre><p>Remember your country code in <code>Code</code> column.</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pacman -Syy
+</span></span></code></pre></div><p>Now install <code>reflector</code>, a Python script that retrieves the latest mirror from <a href="https://archlinux.org/mirrors/status/">Arch mirror status</a>, filter the most up-to-date mirrors and sort them by speed.</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pacman -S reflector
+</span></span></code></pre></div><p>Make a backup of mirror list:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
+</span></span></code></pre></div><p>Find your country&rsquo;s in the mirror list with reflector:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>reflector --list-countries
+</span></span></code></pre></div><p>Remember your country code in <code>Code</code> column.</p>
 <p>Now, get the good mirror list with reflector and save it to <code>/etc/pacman.d/mirrorlist</code>:</p>
-<pre tabindex="0"><code>reflector --sort rate -c &#34;country_code&#34; -f 10 -l 10 -n 10 --save /etc/pacman.d/mirrorlist
-</code></pre><ul>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>reflector --sort rate -c <span style="color:#a5d6ff">&#34;country_code&#34;</span> -f <span style="color:#a5d6ff">10</span> -l <span style="color:#a5d6ff">10</span> -n <span style="color:#a5d6ff">10</span> --save /etc/pacman.d/mirrorlist
+</span></span></code></pre></div><ul>
 <li>
 <p><code>--sort rate</code>: sorts the mirror list by download rate, descending.</p>
 </li>
@@ -515,10 +234,10 @@ To prevent this problem. First we need to sync the pacman repository:</p>
 </li>
 </ul>
 <p>You can customize the number after each filter options to your liking. Type <code>reflector -h</code> in the console for a full list of options.</p>
-<h3 id="install-fundamental-packages">Install fundamental packages<a hidden class="anchor" aria-hidden="true" href="#install-fundamental-packages">#</a></h3>
+<h3 id="install-fundamental-packages">Install fundamental packages</h3>
 <p>Now that we have obtained a good mirror list, we can proceed to install the most basic packages for Arch Linux:</p>
-<pre tabindex="0"><code>pacstrap /mnt base linux linux-firmware grub efibootmgr neovim
-</code></pre><p><code>base</code>, <code>linux</code>, <code>linux-firmware</code>: these 3 packages provide the most standard experience and is required for a functional Arch Linux system. With <code>linux</code> and <code>linux-firmware</code> being the kernel for Linux. Alternatively they can be substituted for other variants of Linux kernel such as <code>linux-lts</code>, <code>linux-zen</code>. Make sure you install the firmware that goes with the kernel (<code>linux-lts-firmware</code>, <code>linux-zen-firmware</code>, etc.).</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pacstrap /mnt base linux linux-firmware grub efibootmgr neovim
+</span></span></code></pre></div><p><code>base</code>, <code>linux</code>, <code>linux-firmware</code>: these 3 packages provide the most standard experience and is required for a functional Arch Linux system. With <code>linux</code> and <code>linux-firmware</code> being the kernel for Linux. Alternatively they can be substituted for other variants of Linux kernel such as <code>linux-lts</code>, <code>linux-zen</code>. Make sure you install the firmware that goes with the kernel (<code>linux-lts-firmware</code>, <code>linux-zen-firmware</code>, etc.).</p>
 <ul>
 <li>
 <p><code>grub</code>: the chosen bootloader for Linux system and is one of the most preferred ones.</p>
@@ -533,77 +252,70 @@ To prevent this problem. First we need to sync the pacman repository:</p>
 <p><em>Additionally you can add more packages to support the setup process, or install them later with <code>pacman</code>.</em></p>
 <p>The installation process should take 10-15 minutes. If it fails during the time, you can run the install command again.</p>
 <hr>
-<h2 id="configure-the-system">Configure the system<a hidden class="anchor" aria-hidden="true" href="#configure-the-system">#</a></h2>
+<h2 id="configure-the-system">Configure the system</h2>
 <p>Now that we have basically finished installing Arch Linux. These are the few steps left that prevent us from being an Arch user.</p>
-<h3 id="fstab">Fstab<a hidden class="anchor" aria-hidden="true" href="#fstab">#</a></h3>
+<h3 id="fstab">Fstab</h3>
 <p>Generate file system table with this command:</p>
-<pre tabindex="0"><code>genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
-</code></pre><p>The content in <code>/mnt/etc/fstab</code> should be identical to the output when we run this command in console:</p>
-<pre tabindex="0"><code>genfstab -U /mnt
-</code></pre><p>Check <code>/mnt/etc/fstab</code> and edit/regenerate in case of errors by using <code>cat</code> to print the file&rsquo;s content into console:</p>
-<pre tabindex="0"><code>cat /mtn/etc/fstab
-</code></pre><h3 id="change-root-directory-into-the-new-system">Change root directory into the new system<a hidden class="anchor" aria-hidden="true" href="#change-root-directory-into-the-new-system">#</a></h3>
-<pre tabindex="0"><code>arch-chroot /mnt
-</code></pre><p>This command let us enter the mounted disk as <em>root</em>. Now you are using the newly installed Arch Linux system. Further configurations is needed so you could run it properly when reboot.</p>
-<h3 id="timezone">Timezone<a hidden class="anchor" aria-hidden="true" href="#timezone">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
+</span></span></code></pre></div><p>The content in <code>/mnt/etc/fstab</code> should be identical to the output when we run this command in console:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>genfstab -U /mnt
+</span></span></code></pre></div><p>Check <code>/mnt/etc/fstab</code> and edit/regenerate in case of errors by using <code>cat</code> to print the file&rsquo;s content into console:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat /mnt/etc/fstab
+</span></span></code></pre></div><h3 id="change-root-directory-into-the-new-system">Change root directory into the new system</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>arch-chroot /mnt
+</span></span></code></pre></div><p>This command let us enter the mounted disk as <em>root</em>. Now you are using the newly installed Arch Linux system. Further configurations is needed so you could run it properly when reboot.</p>
+<h3 id="timezone">Timezone</h3>
 <p>By default Arch&rsquo;s timezone if set to UTC. We can use <strong>timedatectl</strong> to change the correct timezone.</p>
-<pre tabindex="0"><code>timedatectl list-timezones
-</code></pre><p>The above command lists all of the available timezones. Choose your timezone and apply it with this command:</p>
-<pre tabindex="0"><code>timedatectl set-timezone Vietnam/Ho_Chi_Minh
-</code></pre><p>Replace <code>Vietnam/Ho_Chi_Minh</code> with the timezone that you prefer.</p>
-<h3 id="localization">Localization<a hidden class="anchor" aria-hidden="true" href="#localization">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>timedatectl list-timezones
+</span></span></code></pre></div><p>The above command lists all of the available timezones. Choose your timezone and apply it with this command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>timedatectl set-timezone Vietnam/Ho_Chi_Minh
+</span></span></code></pre></div><p>Replace <code>Vietnam/Ho_Chi_Minh</code> with the timezone that you prefer.</p>
+<h3 id="localization">Localization</h3>
 <p>This is what determine the language, numbering, date, and currency formats of our system.</p>
 <p><code>/etc/locale.gen</code> contains all the available locales that we can choose by uncomment the lines.</p>
-<pre tabindex="0"><code>nvim /etc/locale.gen
-</code></pre><ul>
-<li>
-<p>Enter <strong>edit mode</strong> by pressing <em>i</em> then navigate to the desired line of your locale and remove <code>#</code> at the beginning.</p>
-</li>
-<li>
-<p>Press <strong>Esc</strong> to enter <strong>normal mode</strong> and type <code>:wq</code> to save the changes and quit to console.
-<em>I would recommend having en_US.UTF-8 as system language to make it easier diagnosing problems and finding solutions, you can choose an addition of your native language for other format like date, time and currency.</em></p>
-</li>
-<li>
-<p>Create <strong>locale.conf</strong> and set the language accordingly:</p>
-</li>
-</ul>
-<pre tabindex="0"><code>nvim /etc/locale.conf
-</code></pre><p>Add this line to the file and save it (you can replace <em>en_US.UTF-8</em> with your preferred system language):</p>
-<pre tabindex="0"><code>LANG=en_US.UTF-8
-</code></pre><p>Finally generate the locale configurations:</p>
-<pre tabindex="0"><code>locale-gen
-</code></pre><p>You should see the chosen locales being generated.</p>
-<h3 id="network-configuration">Network configuration<a hidden class="anchor" aria-hidden="true" href="#network-configuration">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nvim /etc/locale.gen
+</span></span></code></pre></div><ol>
+<li>Enter <strong>edit mode</strong> by pressing <em>i</em> then navigate to the desired line of your locale and remove <code>#</code> at the beginning.</li>
+<li>Press <strong>Esc</strong> to enter <strong>normal mode</strong> and type <code>:wq</code> to save the changes and quit to console.
+<em>I would recommend having en_US.UTF-8 as system language to make it easier diagnosing problems and finding solutions, you can choose an addition of your native language for other format like date, time and currency.</em></li>
+<li>Create <strong>locale.conf</strong> and set the language accordingly:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nvim /etc/locale.conf
+</span></span></code></pre></div><p>Add this line to the file and save it (you can replace <code>en_US.UTF-8</code> with your preferred system language):</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#79c0ff">LANG</span><span style="color:#ff7b72;font-weight:bold">=</span>en_US.UTF-8
+</span></span></code></pre></div><p>Finally generate the locale configurations:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>locale-gen
+</span></span></code></pre></div><p>You should see the chosen locales being generated.</p>
+<h3 id="network-configuration">Network configuration</h3>
 <p>Create a <code>/etc/hostname</code> file to add your computer&rsquo;s hostname to the network</p>
-<pre tabindex="0"><code>echo archuser &gt; /etc/hostname
-</code></pre><p>Replace <strong>archuser</strong> with your preferred hostname.</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo archuser &gt; /etc/hostname
+</span></span></code></pre></div><p>Replace <strong>archuser</strong> with your preferred hostname.</p>
 <p>Next is to create the hosts file:</p>
-<pre tabindex="0"><code>nvim /etc/hosts
-</code></pre><p>Add this configuration to your <strong>hosts</strong> file (replace <strong>archuser</strong> with your hostname as well):</p>
-<pre tabindex="0"><code>127.0.0.1	localhost
-::1		localhost
-127.0.1.1	archuser
-</code></pre><h3 id="setup-root-password">Setup root password<a hidden class="anchor" aria-hidden="true" href="#setup-root-password">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nvim /etc/hosts
+</span></span></code></pre></div><p>Add this configuration to your <strong>hosts</strong> file (replace <strong>archuser</strong> with your hostname as well):</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>127.0.0.1	localhost
+</span></span><span style="display:flex;"><span>::1		localhost
+</span></span><span style="display:flex;"><span>127.0.1.1	archuser
+</span></span></code></pre></div><h3 id="setup-root-password">Setup root password</h3>
 <p>Run the following command and set the password for your <em>root</em> account:</p>
-<pre tabindex="0"><code>passwd
-</code></pre><p>Additionally, it is strongly recommended avoid using the system as root. Best practice is to add another user and grant root access.</p>
-<pre tabindex="0"><code>useradd -m newuser
-passwd newuser
-</code></pre><p>Replace <code>newuser</code> with your preferred name and choose a password.</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>passwd
+</span></span></code></pre></div><p>Additionally, it is strongly recommended avoid using the system as root. Best practice is to add another user and grant root access.</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>useradd -m newuser
+</span></span><span style="display:flex;"><span>passwd newuser
+</span></span></code></pre></div><p>Replace <code>newuser</code> with your preferred name and choose a password.</p>
 <p>Now grant our new user root access and other privileges:</p>
-<pre tabindex="0"><code>usermod -aG wheel,audio,video,storage newuser
-</code></pre><p>The above command adds <strong>newuser</strong> to 4 groups: <em>wheel</em>, <em>audio</em>, <em>video</em> and <em>storage</em> which accordingly allowing access to super user, audio devices, video devices and storage devices control.</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>usermod -aG wheel,audio,video,storage newuser
+</span></span></code></pre></div><p>The above command adds <strong>newuser</strong> to 4 groups: <em>wheel</em>, <em>audio</em>, <em>video</em> and <em>storage</em> which accordingly allowing access to super user, audio devices, video devices and storage devices control.</p>
 <p>Finally, we need to edit the visudo file so that root access can be granted to <strong>wheel</strong> user group:</p>
-<pre tabindex="0"><code>EDITOR=nvim visudo
-</code></pre><p><img loading="lazy" src="/arch_install_guide/visudo.png" alt="visudo"  />
-</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#79c0ff">EDITOR</span><span style="color:#ff7b72;font-weight:bold">=</span>nvim visudo
+</span></span></code></pre></div><p><img src="/arch_install_guide/visudo.png" alt="visudo"></p>
 <p>Uncomment <code>%wheel ALL=(ALL:ALL) ALL</code> to grant root access to your newly created user.</p>
 <p><strong>Unmount all partitions and reboot the system:</strong></p>
-<pre tabindex="0"><code>umount -a &amp;&amp; reboot
-</code></pre><p>Login with your created username and password.</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>umount -a <span style="color:#ff7b72;font-weight:bold">&amp;&amp;</span> reboot
+</span></span></code></pre></div><p>Login with your created username and password.</p>
 <p>Now, unless you&rsquo;re a masochist, you wouldn&rsquo;t want your Linux system to be a simple terminal with text. It&rsquo;s time to install a <strong>graphical interface</strong> and other utilities to make Arch Linux more usable.</p>
-<h2 id="install-graphical-interface">Install graphical interface<a hidden class="anchor" aria-hidden="true" href="#install-graphical-interface">#</a></h2>
-<h3 id="behind-the-screen">Behind the screen<a hidden class="anchor" aria-hidden="true" href="#behind-the-screen">#</a></h3>
+<h2 id="install-graphical-interface">Install graphical interface</h2>
+<h3 id="behind-the-screen">Behind the screen</h3>
 <p>Linux, on its own, is a functional operating system without the need of an UI. We can interact with the system via command line interface (CLI). However, having a graphical interface installed will make things much more intuitive and task efficient.</p>
 <p>There are many ways to render visual elements on your screen. Here&rsquo;s a general walkthrough:</p>
 <ol>
@@ -638,11 +350,8 @@ May provide additional features like snapping and tiling.</li>
 <p>In <strong>X11</strong>, compositor can be a separate program from the <strong>window manager</strong>, but often <strong>window managers</strong> include compositing functionality.</p>
 <p>In <strong>Wayland</strong>, the compositor takes on both window management and compositing tasks, acting as a single program.</p>
 <ol start="6">
-<li><strong>Desktop environment (DE)</strong> is essentially the graphical interface that you interact with on top of the core Linux system. It can ultilize the use of both Wayland and X11 display protocol for display and comes packed with more features for controlling your system overall.</li>
-</ol>
-<ul>
-<li>
-<p>There are many DEs to choose, each with their own set of core applications and features. Normally people will choose one of the followings:</p>
+<li><strong>Desktop environment (DE)</strong> is essentially the graphical interface that you interact with on top of the core Linux system. It can ultilize the use of both Wayland and X11 display protocol for display and comes packed with more features for controlling your system overall.
+There are many DEs to choose, each with their own set of core applications and features. Normally people will choose one of the followings:
 <ul>
 <li><strong>xfce:</strong> a minimal, light-weight DE with efficient resource consumption, suitable for old hardwares.</li>
 <li><strong>GNOME:</strong> modern and user-friendly DE, has sleek interface and supports many extensions for customization.</li>
@@ -650,163 +359,86 @@ May provide additional features like snapping and tiling.</li>
 <li><strong>Cinnamon:</strong> Has a familiar layout to that of Windows, holds a good balance of features and performance.</li>
 </ul>
 </li>
-<li>
-<p>In this guide, we will install <strong>KDE Plasma</strong> for graphical interface.</p>
-</li>
-</ul>
-<p>Of course there are many other methods of displaying things in your screen to choose as wished such as <a href="https://i3wm.org/">i3 - tiling window manager</a>, <a href="https://hyprland.org/">hyprland - tiling wayland compositor</a> and many more.</p>
-<h3 id="install-kde-plasme-desktop-environment">Install KDE Plasme Desktop Environment<a hidden class="anchor" aria-hidden="true" href="#install-kde-plasme-desktop-environment">#</a></h3>
+</ol>
+<p>There are also many other methods of displaying things in your screen to choose such as <a href="https://i3wm.org/">i3 - tiling window manager</a>, <a href="https://hyprland.org/">hyprland - tiling wayland compositor</a>, etc.</p>
 <ul>
-<li>Start by performing a full system update so that all package informations are up-to-date:</li>
+<li>For the sake of your sanity, install <strong>KDE Plasma</strong>.</li>
 </ul>
-<pre tabindex="0"><code>sudo pacman -Syu
-</code></pre><ul>
-<li>Now install KDE Plasma</li>
-</ul>
-<pre tabindex="0"><code>sudo pacman -S plasma
-</code></pre><p>It will prompt you to choose which applications to install, don&rsquo;t choose anything and press <strong>Enter</strong> to install all.</p>
+<h3 id="install-kde-plasma-desktop-environment">Install KDE Plasma Desktop Environment</h3>
+<p>Start by performing a full system update so that all package informations are up-to-date:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -Syu
+</span></span></code></pre></div><p>Install KDE Plasma</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S plasma
+</span></span></code></pre></div><p>It will prompt you to choose which applications to install, don&rsquo;t choose anything and press <strong>Enter</strong> to install all.</p>
 <p><code>plasma</code> is a group of KDE&rsquo;s core applications neccessary for a functional Desktop Environment, shipped with bluetooth and network control utilities, file manager, system settings, etc.</p>
 <p>Additionally, you can install the full collection of KDE&rsquo;s applications with <code>kde-applications</code> (please note that this package will contain many applications that you don&rsquo;t need, or might need, including games and potentially bloatwares):</p>
-<pre tabindex="0"><code>sudo pacman -S kde-applications
-</code></pre><h2 id="aur-helper">AUR Helper<a hidden class="anchor" aria-hidden="true" href="#aur-helper">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S kde-applications
+</span></span></code></pre></div><h2 id="aur-helper">AUR Helper</h2>
 <p>You&rsquo;re missing out on a lot things if your Arch Linux doesn&rsquo;t have an <a href="https://wiki.archlinux.org/title/AUR_helpers">AUR Helper</a> - a tool that simplifies interacting with the AUR. Manually downloading, building, and installing AUR packages can be cumbersome. AUR Helpers automate these tasks, making it easier and faster to install software from the AUR.</p>
-<p><strong>yay</strong> will be the chosen one for this guide.</p>
-<pre tabindex="0"><code>pacman -S --needed git base-devel
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-</code></pre><p>The user guide for <strong>yay</strong> can be found in <a href="https://github.com/Jguer/yay">this repository</a></p>
-<h2 id="enable-core-sevices">Enable core sevices<a hidden class="anchor" aria-hidden="true" href="#enable-core-sevices">#</a></h2>
+<p><strong>yay</strong>(Yet Another Yogurt) is my go-to.</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pacman -S --needed git base-devel
+</span></span><span style="display:flex;"><span>git clone https://aur.archlinux.org/yay.git
+</span></span><span style="display:flex;"><span>cd yay
+</span></span><span style="display:flex;"><span>makepkg -si
+</span></span></code></pre></div><p>The user guide for <strong>yay</strong> can be found in <a href="https://github.com/Jguer/yay">this repository</a></p>
+<h2 id="enable-core-sevices">Enable core sevices</h2>
 <p>Before you reboot into the new system. Enable <code>sddm</code> that <code>KDE plasma</code> uses as the default display manager (login screen).</p>
-<pre tabindex="0"><code>sudo systemctl enable sddm.service
-</code></pre><p>Also enable <code>NetworkManager.service</code> to be able to configure network connections on next reboot:</p>
-<pre tabindex="0"><code>sudo systemctl enable NetworkManager.service
-</code></pre><p>Reboot and enjoy your new Linux system:</p>
-<pre tabindex="0"><code>reboot
-</code></pre><h2 id="install-additional-packages">Install additional packages<a hidden class="anchor" aria-hidden="true" href="#install-additional-packages">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl enable sddm.service
+</span></span></code></pre></div><p>Also enable <code>NetworkManager.service</code> to be able to configure network connections on next reboot:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl enable NetworkManager.service
+</span></span></code></pre></div><p>Reboot and enjoy your new Linux system:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>reboot
+</span></span></code></pre></div><h2 id="install-additional-packages">Install additional packages</h2>
 <p>If your computer has a dedicated graphics card (NVIDIA/AMD) then you should consider installing the respective drivers to make use of everything from your computer. Refer to the Arch Wiki for installation guide with <a href="https://wiki.archlinux.org/title/AMDGPU">AMD gpu</a> or <a href="https://wiki.archlinux.org/title/NVIDIA">NVIDIA gpu</a>.</p>
-<h2 id="welcome-to-the-dark-side-or-the-bright-side-depends-on-how-you-put-it">Welcome to the dark side, or the bright side, depends on how you put it.<a hidden class="anchor" aria-hidden="true" href="#welcome-to-the-dark-side-or-the-bright-side-depends-on-how-you-put-it">#</a></h2>
-<p>You did it! Welcome to the Arch realm! Taming the Arch installation process is no small feat, and you should be proud of conquering the command line and configuring your system. Now you have a powerful, customizable Arch Linux installation ready to be molded into your perfect desktop. The journey of exploration with Arch begins now!</p>
+<h2 id="welcome-to-the-dark-side-or-the-bright-side-depends-on-how-you-put-it">Welcome to the dark side, or the bright side, depends on how you put it.</h2>
+<p><strong>Changelog</strong></p>
+<ul>
+<li>
+<p>Installed Arch Linux successfully.</p>
+</li>
+<li>
+<p>Gained +10 patience and +5 troubleshooting skills.</p>
+</li>
+<li>
+<p>Known issues: system may break randomly, user expected to fix it.</p>
+</li>
+<li>
+<p>Future work: revisit this guide multiple times.</p>
+</li>
+</ul>
 
+        </section>
+        <div class="post-tags">
+          
+          
+          <nav class="nav tags">
+            <ul class="tags">
+              
+              <li><a href="/tags/tech">tech</a></li>
+              
+              <li><a href="/tags/linux">linux</a></li>
+              
+            </ul>
+          </nav>
+          
+          
+        </div>
+      </div>
 
+      
+      
+    </div>
+
+    </article>
+</main>
+<footer>
+  <div style="display:flex"><a class="soc" href="https://github.com/tiam4tt" rel="me" title="github"><i
+        class="si si-github"></i></a><a class="border"></a><a class="soc" href="www.linkedin.com/in/khuuthanhthien" rel="me" title="linkedin"><i
+        class="si si-linkedin"></i></a><a class="border"></a></div>
+  <div class="footer-info">
+    2025  Khuu Thanh Thien 
   </div>
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-      <li><a href="https://tiamatt.dev/tags/tech/">Tech</a></li>
-      <li><a href="https://tiamatt.dev/tags/linux/">Linux</a></li>
-    </ul>
-  </footer>
-</article>
-    </main>
-    
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu')
-    if (menu) {
-        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var mybutton = document.getElementById("top-link");
-    window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
-        } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            document.body.classList.add('dark');
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-<script>
-    document.querySelectorAll('pre > code').forEach((codeblock) => {
-        const container = codeblock.parentNode.parentNode;
-
-        const copybutton = document.createElement('button');
-        copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
-
-        function copyingDone() {
-            copybutton.innerHTML = 'copied!';
-            setTimeout(() => {
-                copybutton.innerHTML = 'copy';
-            }, 2000);
-        }
-
-        copybutton.addEventListener('click', (cb) => {
-            if ('clipboard' in navigator) {
-                navigator.clipboard.writeText(codeblock.textContent);
-                copyingDone();
-                return;
-            }
-
-            const range = document.createRange();
-            range.selectNodeContents(codeblock);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-            try {
-                document.execCommand('copy');
-                copyingDone();
-            } catch (e) { };
-            selection.removeRange(range);
-        });
-
-        if (container.classList.contains("highlight")) {
-            container.appendChild(copybutton);
-        } else if (container.parentNode.firstChild == container) {
-            
-        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-            
-            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
-        } else {
-            
-            codeblock.parentNode.appendChild(copybutton);
-        }
-    });
-</script>
-</body>
-
+</footer>
+</div>
+    </body>
 </html>

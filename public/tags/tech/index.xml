@@ -1,40 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tech on serenity</title>
-    <link>https://tiamatt.dev/tags/tech/</link>
+    <link>//localhost:1313/tags/tech/</link>
     <description>Recent content in Tech on serenity</description>
-    <generator>Hugo -- 0.145.0</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
+    <copyright>Khuu Thanh Thien</copyright>
     <lastBuildDate>Mon, 07 Oct 2024 10:46:44 +0700</lastBuildDate>
-    <atom:link href="https://tiamatt.dev/tags/tech/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/tags/tech/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>KZ EDC Pro: They forgot a Zero in the price</title>
-      <link>https://tiamatt.dev/posts/kz-edc-pro-they-forgot-a-zero-in-the-price/</link>
+      <title>My experience with the KZ EDC Pro</title>
+      <link>//localhost:1313/posts/my_experience_with_the_kz_edc_pro/</link>
       <pubDate>Mon, 07 Oct 2024 10:46:44 +0700</pubDate>
-      <guid>https://tiamatt.dev/posts/kz-edc-pro-they-forgot-a-zero-in-the-price/</guid>
-      <description>Either this is their marketing strategy or someone missed a zero</description>
+      <guid>//localhost:1313/posts/my_experience_with_the_kz_edc_pro/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;//localhost:1313/kz_edc_pro/cover.jpg&#34; alt=&#34;cover&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;I like listening to music, especially those tracks from the 90s and early 2000s when the music actually featured the sound of real instruments. And I recently got hooked into IEMs because these little pieces of equipment give me exactly what I want: pure high quality audio.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>You should Dockerize everything, NOW!</title>
-      <link>https://tiamatt.dev/posts/you_should_dockerize_everything_now/</link>
+      <title>You should Dockerize everything!</title>
+      <link>//localhost:1313/posts/you_should_dockerize_everything/</link>
       <pubDate>Wed, 04 Sep 2024 08:02:50 +0700</pubDate>
-      <guid>https://tiamatt.dev/posts/you_should_dockerize_everything_now/</guid>
-      <description>Not at all a sophisticated guide on using Docker.</description>
+      <guid>//localhost:1313/posts/you_should_dockerize_everything/</guid>
+      <description>Just a write-up of my experience learning and experimenting with Docker.</description>
     </item>
     <item>
       <title>Arch Install: a comprehensive guide</title>
-      <link>https://tiamatt.dev/posts/arch-install-a-comprehensive-guide/</link>
+      <link>//localhost:1313/posts/arch-install-a-comprehensive-guide/</link>
       <pubDate>Mon, 08 Jul 2024 10:23:41 +0700</pubDate>
-      <guid>https://tiamatt.dev/posts/arch-install-a-comprehensive-guide/</guid>
-      <description>Arch Linux is surprisingly easy.</description>
+      <guid>//localhost:1313/posts/arch-install-a-comprehensive-guide/</guid>
+      <description>It&amp;rsquo;s not that hard tbh.</description>
     </item>
     <item>
-      <title>Conversion to Linux, from Windows</title>
-      <link>https://tiamatt.dev/posts/conversion_to_linux_from_windows/</link>
+      <title>Switching from Windows to Linux</title>
+      <link>//localhost:1313/posts/swiching-from-windows-to-linux/</link>
       <pubDate>Wed, 03 Jul 2024 15:31:21 +0700</pubDate>
-      <guid>https://tiamatt.dev/posts/conversion_to_linux_from_windows/</guid>
-      <description>I like Windows, but I love Linux.</description>
+      <guid>//localhost:1313/posts/swiching-from-windows-to-linux/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;//localhost:1313/windows2linux/arch-chan.png&#34; alt=&#34;cover&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;i-used-windows&#34;&gt;I used Windows,&lt;/h2&gt;&#xA;&lt;p&gt;and was not feeling like on the same boat with Microsoft with how they are directing the development of Windows Operating System, especially after hearing about that incoming &lt;a href=&#34;https://www.theverge.com/2024/6/13/24178144/microsoft-windows-ai-recall-feature-delay&#34;&gt;&lt;em&gt;Recall&lt;/em&gt;&lt;/a&gt; feature. If it&amp;rsquo;s being a casual user, I wouldn&amp;rsquo;t care much about the announcement. However, it bothers me as a tech enthusiast that these people spend billions of dollars creating something that is advertised as an &amp;ldquo;improvement to quality of life&amp;rdquo; while fetching all of your personal data in the background, and sending those data to Microsoft. In that way they can use the collected data to &amp;ldquo;study&amp;rdquo; users behaviour and come up with more similar things, and they can also sell the data to third party companies, yeah, such angels.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

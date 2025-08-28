@@ -1,41 +1,48 @@
-baseURL: https://tiamatt.dev/
 languageCode: en-us
+copyright: "Khuu Thanh Thien"
 title: serenity
-theme: [hugo-PaperMod]
+theme: "archie"
+googleAnalytics: "G-3TRVBMEW7X"
+pagination:
+    pagerSize: 5
+summaryLength: 40
+
+markup:
+    highlight:
+        style: github-dark
+        codeFences: true
 
 params:
-  ShowBreadCrumbs: true
-  ShowReadingTime: true
-  ShowCodeCopyButtons: true
-  ShowToc: true
-  TocOpen: true
-  hideSummary: false
-  defaultTheme: auto
-  hideFooter: true
+    customcss:
+        - "css/main.css"
+        - "css/dark.css"
 
-  homeInfoParams:
-    Title: "[~]$ whoami"
-    Content: A tech enthusiast having interests in high fidelity audio, Linux and everything open source.
-  social:
-    socialIcons:
-      - name: "spotify"
-        url: "https://open.spotify.com/playlist/0UA9MrH7NQj3fsSrjTMkQm?si=016d92eeb3064bf7"
-      - name: "github"
-        url: "https://github.com/tiam4tt"
+    subtitle: "A tech enthusiast having interests in high fidelity audio, Linux and everything open source."
+    mode: "dark"
+    useCDN: true
+    favicon: "favicon.ico"
+    featherIconsCDN: true
+    mathjac: true
+    katex: true
+    social:
+        -   name: "github"
+            icon: "simple:github"
+            url: "https://github.com/tiam4tt"
+        -   name: "linkedin"
+            icon: "simple:linkedin"
+            url: "www.linkedin.com/in/khuuthanhthien"
 menu:
-  main:
-    - name: About
-      url: about/
-    - name: Search
-      url: search/
-      weight: 10
-    - name: Tags
-      url: tags/
-      weight: 10
-    - name: Archives
-      url: archives/
-      weight: 10
-outputs:
-  home:
-    - HTML
-    - JSON
+    main:
+        -   name: Home
+            url: /
+            weight: 1
+        -   name: All posts
+            url: /posts
+        -   name: About
+            url: /about
+            wegiht: 2
+        -   name: Tags
+            url: /tags
+            weight: 4
+taxomonies:
+    tag: "tags"
