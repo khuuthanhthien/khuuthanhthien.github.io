@@ -25,11 +25,14 @@ On the matter, I decided to make the big switch, Arch Linux is my choice.
 ---
 
 ## Why Arch?
-I chose not to use [`archinstall`](https://wiki.archlinux.org/title/archinstall) because I wanted to set up everything manually and have full control over the system. This included connecting to Wi-Fi, partitioning the hard drive, and installing packages. Along the way, I ran into some challenges, for example, configuring the graphics drivers for a hybrid Intel + NVIDIA setup. At first, my external monitor wasn’t running at the correct refresh rate, but switching from HDMI to DisplayPort solved the issue.
+I switched to Arch Linux because I wanted complete control over my system without the bloat of pre-installed packages that most distributions include. Unlike Ubuntu or Fedora, Arch follows a minimalist philosophy, you only install what you actually need.
 
-While this process can be daunting for anyone seeking a fully stable system right away, it’s been a valuable learning experience. I plan to write a detailed guide on installing Arch Linux in the future for those interested in exploring a highly customizable Linux environment.
+The rolling release model means I get the latest software without waiting for major version updates, and the AUR (Arch User Repository) has virtually every package I could want. Sure, it requires more hands-on maintenance, but that's exactly what I was looking for.
+
+I chose not to use [`archinstall`](https://wiki.archlinux.org/title/archinstall) because the manual installation process taught me how Linux actually works under the hood.
+
 ### Customizability
-We can literally customize EVERYTHING to our heart's desire, from lockscreen to status bar, application appearance and...alomst everything else.
+We can literally customize EVERYTHING to our heart's desire, from lockscreen to status bar, application appearance and...almost everything else.
 
 ![rice](/windows2linux/rice1.png)
 
