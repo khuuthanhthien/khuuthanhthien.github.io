@@ -106,10 +106,12 @@ Create a mounting point under `/mnt` for EFI beforehand with `mkdir`:
 mkdir -p /mnt/boot/efi
 ```
 Then mount the efi partition:
+
 ```bash
 mount /dev/your_efi_partition /mnt/boot/efi
-```bash
+```
 Afternatively, you can run `mount` with `--mkdir` option:
+
 ```bash
 mount --mkdir /dev/your_efi_partition /mnt/boot/efi
 ```
@@ -129,7 +131,8 @@ iwctl
 Next, list all your wireless interfaces/devices using this command:
 ```bash
 device list
-```bash
+```
+
 Select the preferred one, normally `wlan0`.
 
 Now scan for available networks:
@@ -139,10 +142,12 @@ station wlan0 scan
 (replace `wlan0` with your preferred one)
 
 While it's scanning, see available connections with this command:
+
 ```bash
 station wlan0 get-networks
 ```
 Connect to your target Wi-Fi:
+
 ```bash
 station wlan0 connect "name of network/wifi"
 ```
@@ -183,15 +188,17 @@ Now, get the good mirror list with reflector and save it to `/etc/pacman.d/mirro
 ```bash
 reflector --sort rate -c "country_code" -f 10 -l 10 -n 10 --save /etc/pacman.d/mirrorlist
 ```
-- `--sort rate`: sorts the mirror list by download rate, descending.
 
-- `-c`: specifies which country to fetch mirror list from.
+Here's what each option means:
+1. `--sort rate`: sorts the mirror list by download rate, descending.
 
-- `-f 10`: tells the script to fetch the fastest 10 mirrors.
+2. `-c`: specifies which country to fetch mirror list from.
 
-- `-l 10`: tells the script to fetch the latest 10 mirrors.
+3. `-f 10`: tells the script to fetch the fastest 10 mirrors.
 
-- `-n 10`: tells the script to fetch the max amount of 10 mirrors.
+4. `-l 10`: tells the script to fetch the latest 10 mirrors.
+
+5. `-n 10`: tells the script to fetch the max amount of 10 mirrors.
 
 You can customize the number after each filter options to your liking. Type `reflector -h` in the console for a full list of options.
 
@@ -204,11 +211,11 @@ pacstrap /mnt base linux linux-firmware grub efibootmgr neovim
 
 `base`, `linux`, `linux-firmware`: these 3 packages provide the most standard experience and is required for a functional Arch Linux system. With `linux` and `linux-firmware` being the kernel for Linux. Alternatively they can be substituted for other variants of Linux kernel such as `linux-lts`, `linux-zen`. Make sure you install the firmware that goes with the kernel (`linux-lts-firmware`, `linux-zen-firmware`, etc.).
 
-- `grub`: the chosen bootloader for Linux system and is one of the most preferred ones.
+1. `grub`: the chosen bootloader for Linux system and is one of the most preferred ones.
 
-- `efibootmgr`: is used to modify the EFI Boot Manager. It can create and destroy boot entries, change the boot order, change the next running boot option, and more.
+2. `efibootmgr`: is used to modify the EFI Boot Manager. It can create and destroy boot entries, change the boot order, change the next running boot option, and more.
 
-- `neovim`: the standard text editor. Requires a basic knowledge of Vim.
+3. `neovim`: the standard text editor. Requires a basic knowledge of Vim.
 
 *Additionally you can add more packages to support the setup process, or install them later with `pacman`.*
 
@@ -415,12 +422,13 @@ If your computer has a dedicated graphics card (NVIDIA/AMD) then you should cons
 
 ## Welcome to the dark side, or the bright side, depends on how you put it.
 
-**Changelog**
+**Changelog:**
+1. Installed Arch Linux successfully.
 
-- Installed Arch Linux successfully.
+2. Total time wasted: 3-5 hours.
 
-- Gained +10 patience and +5 troubleshooting skills.
+3. +10 patience and +5 troubleshooting skills.
 
-- Known issues: system may break randomly, user expected to fix it.
+4. Known issues: system may break randomly, user expected to fix it.
 
-- Future work: revisit this guide multiple times.
+5. Future work: revisit this guide multiple times.
