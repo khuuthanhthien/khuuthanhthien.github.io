@@ -1,26 +1,26 @@
 body {
-  color: #cdd6f4;
-  background-color: #181825;
+  color: #abb2bf;
+  background-color: #282c34;
 }
 
 ::-moz-selection {
-  background: #181825;
+  background: #282c34;
   color: #cdd6f4;
   text-shadow: none;
 }
 
 ::selection {
   background: #cdd6f4;
-  color: #181825;
+  color: #282c34;
   text-shadow: none;
 }
 
 hr {
-  border-top: 3px dotted #a6e3a1;
+  border-top: 3px dotted #98c379;
 }
 code {
-  background-color: #b4befe;
-  color: #181825;
+  background-color: #61AFEF;
+  color: #282c34;
   text-decoration: bold;
   padding: 0.1em 0.2em;
 }
@@ -31,7 +31,7 @@ pre {
   padding: 1em;
 }
 blockquote {
-  border-color: #f38ba8;
+  border-color: #E06c75;
 }
 
 h1,
