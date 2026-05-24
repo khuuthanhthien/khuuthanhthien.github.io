@@ -1,7 +1,7 @@
 {{- $description := or .Description .Summary site.Params.description | plainify | htmlUnescape | chomp -}}
 {{- $author := or .Params.author (site.Params.author).name -}}
 <meta charset="utf-8" />
-<meta name="language" content="{{ site.Language.Locale | default "en" }}" />
+<meta name="language" content="{{ site.Language.Lang | default "en" }}" />
 <meta name="viewport" content="width=device-width" />
 <title>
   {{- if .IsHome }}
