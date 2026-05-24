@@ -1,0 +1,13 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  <ul class="my-4 space-y-2">
+    {{ range .Pages }}
+      <li>
+        <a href="{{ .RelPermalink }}" class="no-underline hover:underline">
+          {{ .LinkTitle }}
+          <span class="text-neutral-500">({{ len .Pages }})</span>
+        </a>
+      </li>
+    {{ end }}
+  </ul>
+{{ end }}

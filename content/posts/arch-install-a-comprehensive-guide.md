@@ -3,12 +3,14 @@ title = "Arch Install: a comprehensive guide"
 summary = "It's not that hard tbh."
 date = 2024-07-08T10:23:41+07:00
 draft = false
-tags = ["tech","linux"]
+tags = ["tech"]
 +++
 
 ![cover](/arch_install_guide/arch_wallpaper.jpg)
 
 ## Yet another guide to installing Arch Linux
+
+If you're thinking about switching to Linux, here's {{< backlink "swiching-from-windows-to-linux" "why I made the switch" >}}.
 
 > **Disclaimer:** I am not responsible for the lost of data, faulty BIOS, thermonuclear war, or you only seeing your face in the screen because everything goes blank after installing graphics drivers. This is an installation guide, simplified based on my personal experience, with the only purpose is to be more approachable.
 >

@@ -3,7 +3,7 @@ title = 'Switching from Windows to Linux'
 description = "A personal take on moving from Windows to Linux, the hurdles I faced, and why I stuck with it."
 date = 2024-07-03T15:31:21+07:00
 draft = false
-tags = ["tech","linux"]
+tags = ["tech"]
 +++
 
 ![cover](/windows2linux/arch-chan.png)
@@ -20,7 +20,7 @@ There are many more reasons to why Windows is slowly being deprived the self-pro
 - Microsoft Edge and the way they stubbornly integrate it into Windows.
 - The collection of data without user's consent.
 
-On the matter, I decided to make the big switch, Arch Linux is my choice.
+On the matter, I decided to make the big switch, Arch Linux is my choice. If you want to switch too, {{< backlink "arch-install-a-comprehensive-guide" "this comprehensive guide" >}} will walk you through the installation.
 
 ---
 

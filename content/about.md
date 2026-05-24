@@ -19,4 +19,4 @@ Honestly? Just a spot to mess around, break things, and maybe share something us
 
 Expect notes, half-baked experiments, random thoughts about tech and whatever else I stumble into.
 
-Built with [**Hugo**](https://gohugo.io/) $\cdot$ [**Archie Theme**](https://github.com/athul/archie.git) $\cdot$ Deployed on [**Vercel**](https://vercel.com/).
+Built with [**Hugo**](https://gohugo.io/); [**Xmin Theme**](https://github.com/yihui/hugo-xmin.git); Deployed on [**Vercel**](https://vercel.com/).

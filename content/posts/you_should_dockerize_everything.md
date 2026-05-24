@@ -3,7 +3,7 @@ title = 'You should Dockerize everything!'
 summary = 'Just a write-up of my experience learning and experimenting with Docker.'
 date = 2024-09-04T08:02:50+07:00
 draft = false
-tags = ["tech","docker"]
+tags = ["tech"]
 +++
 
 ![cover](/docker101/docker101.jpg)
