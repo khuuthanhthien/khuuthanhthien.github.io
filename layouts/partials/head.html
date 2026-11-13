@@ -24,6 +24,8 @@
 {{ end -}}
 {{ if fileExists "static/images/favicon.png" -}}
   <link rel="icon" type="image/png" href="/images/favicon.png" />
+{{ else if fileExists "static/favicon.ico" -}}
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 {{ end -}}
 {{ template "_internal/opengraph.html" . }}
 {{ template "_internal/schema.html" . }}
