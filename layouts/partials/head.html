@@ -19,12 +19,25 @@
 {{ if eq "404" .Kind -}}
   <meta name="robots" content="noindex" />
 {{ end -}}
+{{/* Firefox stores /favicon.ico as an origin-level root icon with no page
+  association, which leaves bookmark/sidebar icons blank. Sized PNGs at
+  non-root URLs get mapped to the page, so list them explicitly. */ -}}
+{{ if fileExists "static/favicon-16x16.png" -}}
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+{{ end -}}
+{{ if fileExists "static/favicon-32x32.png" -}}
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+{{ end -}}
+{{ if fileExists "static/favicon-48x48.png" -}}
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+{{ end -}}
 {{ if fileExists "static/images/favicon.svg" -}}
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
 {{ end -}}
 {{ if fileExists "static/images/favicon.png" -}}
   <link rel="icon" type="image/png" href="/images/favicon.png" />
-{{ else if fileExists "static/favicon.ico" -}}
+{{ end -}}
+{{ if fileExists "static/favicon.ico" -}}
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 {{ end -}}
 {{ template "_internal/opengraph.html" . }}
