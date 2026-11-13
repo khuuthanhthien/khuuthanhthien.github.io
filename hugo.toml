@@ -3,80 +3,81 @@ copyright = 'Khuu Thanh Thien'
 title = 'serenity'
 theme = 'hugo-theme-til'
 summaryLength = 40
+baseURL = "https://khuuthanhthien.github.io"
 
 [author]
-  name = 'Khuu Thanh Thien'
+name = 'Khuu Thanh Thien'
 
 [pagination]
-  pagerSize = 5
+pagerSize = 5
 
 [markup]
-  [markup.goldmark]
-    [markup.goldmark.extensions]
-      [markup.goldmark.extensions.passthrough]
-        enable = true
-        [markup.goldmark.extensions.passthrough.delimiters]
-          block = [['\[', '\]'], ['$$', '$$']]
-          inline = [['\(', '\)']]
+[markup.goldmark]
+[markup.goldmark.extensions]
+[markup.goldmark.extensions.passthrough]
+enable = true
+[markup.goldmark.extensions.passthrough.delimiters]
+block = [['\[', '\]'], ['$$', '$$']]
+inline = [['\(', '\)']]
 
-  [markup.highlight]
-    style = 'github-dark'
-    codeFences = true
+[markup.highlight]
+style = 'github-dark'
+codeFences = true
 
 [services]
-  [services.googleAnalytics]
-    ID = 'G-3TRVBMEW7X'
+[services.googleAnalytics]
+ID = 'G-3TRVBMEW7X'
 
 [params]
-  dateFormat = ':date_long'
-  math = true
-  showGraph = false
+dateFormat = ':date_long'
+math = true
+showGraph = false
 
-  [params.author]
-    name = 'Khuu Thanh Thien'
+[params.author]
+name = 'Khuu Thanh Thien'
 
-  [params.home]
-    showRecentPosts = true
-    showRecentNotes = true
-    recentPostsLimit = 3
-    recentNotesLimit = 5
+[params.home]
+showRecentPosts = true
+showRecentNotes = true
+recentPostsLimit = 3
+recentNotesLimit = 5
 
-  [params.notes]
-    showCategoryFilter = true
-    pageSize = 20
+[params.notes]
+showCategoryFilter = true
+pageSize = 20
 
-  [params.footer]
-    creativeCommonsLicense = 'by_nc_sa'
-    showCreativeCommonsIcons = true
-    showThemeCredit = true
+[params.footer]
+creativeCommonsLicense = 'by_nc_sa'
+showCreativeCommonsIcons = true
+showThemeCredit = true
 
 [menu]
-  [[menu.main]]
-    name = 'Home'
-    pageRef = '/'
-    weight = 1
+[[menu.main]]
+name = 'Home'
+pageRef = '/'
+weight = 1
 
-  [[menu.main]]
-    name = 'Posts'
-    pageRef = '/posts'
-    weight = 10
+[[menu.main]]
+name = 'Posts'
+pageRef = '/posts'
+weight = 10
 
-  # [[menu.main]]
-  #   name = 'Notes'
-  #   pageRef = '/notes'
-  #   weight = 20
+# [[menu.main]]
+#   name = 'Notes'
+#   pageRef = '/notes'
+#   weight = 20
 
-  [[menu.main]]
-    name = 'Tags'
-    pageRef = '/tags'
-    weight = 30
+[[menu.main]]
+name = 'Tags'
+pageRef = '/tags'
+weight = 30
 
-  [[menu.main]]
-    name = 'About'
-    pageRef = '/about'
-    weight = 40
+[[menu.main]]
+name = 'About'
+pageRef = '/about'
+weight = 40
 
-  [[menu.main]]
-    name = 'Graph'
-    pageRef = '/graph'
-    weight = 50
+[[menu.main]]
+name = 'Graph'
+pageRef = '/graph'
+weight = 50
